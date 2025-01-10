@@ -11,16 +11,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 onMounted(() => {
-    gsap.to('.jump-desktop', {
+    gsap.to('.jump', {
         y: -40,
         scrollTrigger: {
             trigger: "#card-div",
             start: "top center",
         }
-    });
-    gsap.to('.jump', {
-        scrollTrigger: '.card',
-        y: -20,
     });
 })
 
@@ -41,20 +37,20 @@ onMounted(() => {
         </div>
     </div>
     <div id="card-div" class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col">
-        <div class="card w-[90%] h-fit md:w-full flex gap-2 flex-col justify-center items-center">
-            <div class="jump md:jump-desktop md:duration-[0.5s]"><Pin/></div>
+        <div class="w-[90%] h-fit md:w-full flex gap-2 flex-col justify-center items-center">
+            <div class="jump md:duration-[0.5s]"><Pin/></div>
             <div class="bg-gradient-to-br from-primary-green/60 to-primary-pink/60 w-full max-w-[400px] h-[500px] rounded-xl backdrop-blur-sm">
 
             </div>
         </div>
-        <div class="card w-[90%] h-fit md:mt-[100px] md:w-full flex gap-2 flex-col justify-center items-center">
-            <div class="jump md:jump-desktop md:delay-[0.4s] md:duration-[0.5s]"><Pin/></div>
+        <div class="w-[90%] h-fit md:mt-[100px] md:w-full flex gap-2 flex-col justify-center items-center">
+            <div class="jump md:delay-[0.4s] md:duration-[0.5s]"><Pin/></div>
             <div class="bg-gradient-to-br from-primary-green/60 to-primary-pink/60 w-full max-w-[400px] h-[500px] rounded-xl backdrop-blur-sm">
 
             </div>
         </div>
-        <div class="card w-[90%] h-fit md:w-full flex gap-2 flex-col justify-center items-center">
-            <div class="jump md:jump-desktop md:delay-[0.2s] md:duration-[0.5s]"><Pin/></div>
+        <div class="w-[90%] h-fit md:w-full flex gap-2 flex-col justify-center items-center">
+            <div class="jump md:delay-[0.2s] md:duration-[0.5s]"><Pin/></div>
             <div class="bg-gradient-to-br from-primary-green/60 to-primary-pink/60 w-full max-w-[400px] h-[500px] rounded-xl backdrop-blur-sm">
 
             </div>
