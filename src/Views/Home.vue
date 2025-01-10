@@ -5,8 +5,7 @@ import GoToSearch from '../components/GoToSearch.vue'
 
 <template>
 <div class="w-full min-h-screen bg-base bg-kc-map bg-center bg-contain p-4 flex flex-col gap-4">
-    <div class="w-full flex justify-between">
-        <GoToSearch/>
+    <div class="w-full flex justify-end">
         <GoToSearch/>
     </div>
     <div class="w-full h-[70vh] flex justify-center items-center">
