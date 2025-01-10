@@ -27,6 +27,12 @@ export default {
         'layer2': '#4F4E4E',
         'layer3': '#575757',
         'layer4': '#6E6D6D'
+      },
+      backgroundImage: {
+        'kc-map': "url('/bg-map.png')"
+      },
+      boxShadow: {
+        'sm': '0 0 0 5px rgba(255, 255, 255, 1)',
       }
     },
   },
