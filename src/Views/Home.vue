@@ -11,7 +11,7 @@ import GoToSearch from '../components/GoToSearch.vue'
     </div>
     <div class="w-full h-[70vh] flex justify-center items-center">
         <div class="w-[97%] min-h-fit max-h-[300px] md:max-h-[600px] h-[40dvh] md:p-0 md:w-[600px] md:h-[400px] bg-layer2/60 rounded-xl backdrop-blur-sm text-center flex flex-col justify-center items-center">
-            <div class="bg-gradient-to-r from-secondary-red to-secondary-yellow font-black w-fit bg-clip-text text-transparent text-[60px] md:text-[96px] font-h1">
+            <div class="bg-gradient-to-r from-secondary-red to-secondary-yellow font-black w-fit bg-clip-text text-transparent text-[50px] md:text-[96px] font-h1">
                 <p class="">Search</p>
                 <h1 class="mt-[-40px] md:mt-[-65px]">Real KC</h1>
             </div>
