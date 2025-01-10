@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@maptiler/leaflet-maptilersdk": "^2.0.0",
+    "gsap": "^3.12.5",
     "leaflet": "^1.9.4",
     "pinia": "^2.3.0",
     "vue": "^3.5.13",

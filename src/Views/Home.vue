@@ -1,11 +1,33 @@
 <script setup>
 import GoToSearch from '../components/GoToSearch.vue'
 import Pin from '../components/Pin.vue'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { onMounted } from 'vue';
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
+onMounted(() => {
+    gsap.to('.jump-desktop', {
+        y: -40,
+        scrollTrigger: {
+            trigger: "#card-div",
+            start: "top center",
+        }
+    });
+    gsap.to('.jump', {
+        scrollTrigger: '.card',
+        y: -20,
+    });
+})
 
 </script>
 
 <template>
-<div class="w-full h-fit min-h-screen bg-base bg-kc-map bg-center bg-contain p-4 flex flex-col gap-4">
+<div class="w-full h-fit min-h-screen bg-base bg-kc-map bg-center bg-contain p-4 flex flex-col gap-4 pb-[200px]">
     <div class="w-full flex justify-end">
         <GoToSearch/>
     </div>
@@ -18,22 +40,22 @@ import Pin from '../components/Pin.vue'
             <button class="italic text-[20px] md:text-[32px] font-body font-bold bg-gradient-to-r from-primary-green to-primary-pink w-[70%] md:w-[50%] flex justify-stretch p-2 rounded-full"><span class="shadow-inner shadow-sm w-full h-full rounded-full">Search</span></button>
         </div>
     </div>
-    <div class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col">
-        <div class="w-[90%] h-fit md:w-full flex gap-2 flex-col justify-center items-center">
-            <div><Pin/></div>
-            <div class="bg-gradient-to-br from-primary-green/60 to-primary-pink/60 w-full h-[300px] rounded-xl backdrop-blur-sm">
+    <div id="card-div" class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col">
+        <div class="card w-[90%] h-fit md:w-full flex gap-2 flex-col justify-center items-center">
+            <div class="jump md:jump-desktop md:duration-[0.5s]"><Pin/></div>
+            <div class="bg-gradient-to-br from-primary-green/60 to-primary-pink/60 w-full max-w-[400px] h-[500px] rounded-xl backdrop-blur-sm">
 
             </div>
         </div>
-        <div class="w-[90%] h-fit md:w-full flex gap-2 flex-col justify-center items-center">
-            <div><Pin/></div>
-            <div class="bg-gradient-to-br from-primary-green/60 to-primary-pink/60 w-full h-[300px] rounded-xl backdrop-blur-sm">
+        <div class="card w-[90%] h-fit md:mt-[100px] md:w-full flex gap-2 flex-col justify-center items-center">
+            <div class="jump md:jump-desktop md:delay-[0.4s] md:duration-[0.5s]"><Pin/></div>
+            <div class="bg-gradient-to-br from-primary-green/60 to-primary-pink/60 w-full max-w-[400px] h-[500px] rounded-xl backdrop-blur-sm">
 
             </div>
         </div>
-        <div class="w-[90%] h-fit md:w-full flex gap-2 flex-col justify-center items-center">
-            <div><Pin/></div>
-            <div class="bg-gradient-to-br from-primary-green/60 to-primary-pink/60 w-full h-[300px] rounded-xl backdrop-blur-sm">
+        <div class="card w-[90%] h-fit md:w-full flex gap-2 flex-col justify-center items-center">
+            <div class="jump md:jump-desktop md:delay-[0.2s] md:duration-[0.5s]"><Pin/></div>
+            <div class="bg-gradient-to-br from-primary-green/60 to-primary-pink/60 w-full max-w-[400px] h-[500px] rounded-xl backdrop-blur-sm">
 
             </div>
         </div>
