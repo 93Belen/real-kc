@@ -17,7 +17,7 @@ import CardFeed from '../components/CardFeed.vue'
     <div class="absolute bottom-[225px] md:bottom-[30px] left-0 z-[1] w-[99vw] overflow-x-hidden">
         <Filters/>
     </div>
-    <div class="absolute bottom-[10px] left-0 md:top-0 md:left-[70vw] w-[99vw] md:w-fit md:h-[99dvh] z-[2] overflow-y-hidden md:overflow-y-auto md:overflow-x-hidden">
+    <div class="absolute ml-[-21px] md:ml-0 bottom-[10px] md:top-0 md:right-[15px] w-[99vw] md:w-fit md:h-[99dvh] z-[2] overflow-y-hidden md:overflow-y-auto md:overflow-x-hidden">
         <CardFeed/>
     </div>
     <!-- Map -->

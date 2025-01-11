@@ -4,7 +4,7 @@ import Card from './Card.vue'
 
 <template>
     <div class="flex md:flex-col gap-6 min-w-full w-fit md:min-h-full md:h-fit overflow-x-scroll md:overflow-y-scroll md:min-w-none md:pb-20">
-        <div class="md:h-[20px]"></div>
+        <div class="md:h-[5px] w-[1px]"></div>
         <Card/>
         <Card/>
         <Card/>
@@ -15,6 +15,7 @@ import Card from './Card.vue'
         <Card/>
         <Card/>
         <Card/>
+        <div class="md:hidden w-[1px]"></div>
     </div>
 </template>
 
