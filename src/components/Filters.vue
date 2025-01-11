@@ -13,15 +13,4 @@ const filters = filterStore.filters
 </template>
 
 <style scoped>
-/* Hide page scrollbar */
-* {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-}
-
-*::-webkit-scrollbar,
-*::-webkit-scrollbar-button {
-  display: none; /* Chrome */
-}
-/* End hide page scrollbar */
 </style>

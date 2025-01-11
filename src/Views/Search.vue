@@ -3,6 +3,7 @@ import Map from '../components/Map.vue'
 import GoBack from '../components/GoBack.vue'
 import Add from '../components/Add.vue'
 import Filters from '../components/Filters.vue'
+import CardFeed from '../components/CardFeed.vue'
 
 </script>
 
@@ -13,8 +14,11 @@ import Filters from '../components/Filters.vue'
         <GoBack/>
         <Add/>
     </div>
-    <div class="absolute bottom-[50px] left-0 z-[1] w-[99vw] overflow-x-hidden">
+    <div class="absolute bottom-[225px] md:bottom-[30px] left-0 z-[1] w-[99vw] overflow-x-hidden">
         <Filters/>
+    </div>
+    <div class="absolute bottom-[10px] left-0 md:top-0 md:left-[70vw] w-[99vw] md:w-fit md:h-[99dvh] z-[2] overflow-y-hidden md:overflow-y-auto md:overflow-x-hidden">
+        <CardFeed/>
     </div>
     <!-- Map -->
     <div class="absolute top-0 left-0 w-full h-[100dvh] z-0 overflow-hidden">
@@ -24,4 +28,16 @@ import Filters from '../components/Filters.vue'
 </template>
 
 <style scoped>
+/* Hide page scrollbar */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button {
+  display: none; /* Chrome */
+}
+/* End hide page scrollbar */
+
 </style>
