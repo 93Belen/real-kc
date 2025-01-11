@@ -1,26 +1,14 @@
 <script setup>
 import FilterChip from './FilterChip.vue'
+import { useFilterStore } from '../pinia/filterStore'
+const filterStore = useFilterStore()
+const filters = filterStore.filters
 </script>
 
 <template>
     <div class="flex gap-6 min-w-full overflow-x-scroll">
         <div class="w-[20px] md:w-[50px]"></div>
-        <FilterChip name="Coffee"/>
-        <FilterChip name="Groceries"/>
-        <FilterChip name="Home"/>
-        <FilterChip name="Arts"/>
-        <FilterChip name="Coffee"/>
-        <FilterChip name="Groceries"/>
-        <FilterChip name="Home"/>
-        <FilterChip name="Arts"/>
-        <FilterChip name="Coffee"/>
-        <FilterChip name="Groceries"/>
-        <FilterChip name="Home"/>
-        <FilterChip name="Arts"/>
-        <FilterChip name="Coffee"/>
-        <FilterChip name="Groceries"/>
-        <FilterChip name="Home"/>
-        <FilterChip name="Arts"/>
+        <FilterChip @click="filterStore.select(filter.name)" v-for="(filter, index) in filters" v-bind:key="index" :filter="filter" />
     </div>
 </template>
 
