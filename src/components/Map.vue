@@ -27,7 +27,7 @@ onMounted(() => {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
     subdomains: "abcd",
     maxZoom: 17,
-    minZoom: 11,
+    minZoom: 10,
     }).addTo(map);
 
 
