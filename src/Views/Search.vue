@@ -21,6 +21,8 @@ onMounted(() => {
                 maxY: 150
             },
             dragResistance: 0.1,
+            allowNativeTouchScrolling: true,
+            // allowEventDefault: true
         });
     }
 })
@@ -59,5 +61,4 @@ onMounted(() => {
   display: none; /* Chrome */
 }
 /* End hide page scrollbar */
-
 </style>
