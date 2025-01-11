@@ -4,6 +4,7 @@ import FilterChip from './FilterChip.vue'
 
 <template>
     <div class="flex gap-6 min-w-full overflow-x-scroll">
+        <div class="w-[20px] md:w-[50px]"></div>
         <FilterChip name="Coffee"/>
         <FilterChip name="Groceries"/>
         <FilterChip name="Home"/>

@@ -13,7 +13,7 @@ import Filters from '../components/Filters.vue'
         <GoBack/>
         <Add/>
     </div>
-    <div class="absolute bottom-[50px] left-0 pl-[50px] z-[1] w-[99vw] overflow-x-hidden">
+    <div class="absolute bottom-[50px] left-0 z-[1] w-[99vw] overflow-x-hidden">
         <Filters/>
     </div>
     <!-- Map -->
