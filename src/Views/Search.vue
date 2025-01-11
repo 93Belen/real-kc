@@ -10,47 +10,21 @@ import { onMounted } from 'vue'
 
 gsap.registerPlugin(Draggable);
 
-// onMounted(() => {
-//     const mobile = window.innerWidth < 768
-//     if(mobile){
-//             Draggable.create(".draggable", {
-//             type: "y",
-//             handle: '.handle',
-//             bounds: {
-//                 minY: 0,
-//                 maxY: 150
-//             },
-//             dragResistance: 0.1,
-//         });
-//     }
-// })
 onMounted(() => {
-    const mobile = window.innerWidth < 768;
-    if (mobile) {
-        Draggable.create(".draggable", {
-            type: "y", // Only allow vertical dragging
+    const mobile = window.innerWidth < 768
+    if(mobile){
+            Draggable.create(".draggable", {
+            type: "y",
             handle: '.handle',
             bounds: {
                 minY: 0,
-                maxY: 150 // Vertical bounds (adjust as needed)
+                maxY: 150
             },
             dragResistance: 0.1,
-            allowNativeTouchScrolling: true, // Allow native touch scrolling
-            onPress: function () {
-                // Disable horizontal dragging to avoid conflict
-                this.vars.allowX = false;
-            },
-            onDrag: function () {
-                // Optionally, prevent horizontal scroll when dragging vertically
-                document.body.style.overflowX = 'hidden';
-            },
-            onRelease: function () {
-                // Re-enable horizontal scrolling once dragging stops
-                document.body.style.overflowX = '';
-            }
         });
     }
 })
+
 
 </script>
 
