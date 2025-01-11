@@ -9,7 +9,7 @@ import Filters from '../components/Filters.vue'
 <template>
 <div class="h-[100dvh] p-6 overflow-hidden box-border">
     <!-- Overlaying elements -->
-    <div class="absolute top-0 left-0 z-[1] h-fit p-6 flex flex-col gap-6">
+    <div class="absolute top-0 left-0 z-[1] h-fit p-2 md:p-6 flex flex-col gap-2 md:gap-6">
         <GoBack/>
         <Add/>
     </div>
