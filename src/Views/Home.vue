@@ -11,9 +11,9 @@ import Pin from '../components/Pin.vue'
         <GoToSearch/>
     </div>
     <div class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col font-body">
-        <div class="w-[90%] h-fit md:w-full flex gap-2 flex-col justify-center items-center">
+        <div class="w-full h-fit flex gap-2 flex-col justify-center items-center">
             <div class="md:animate-bounce"><Pin/></div>
-            <div class="bg-layer2/60 w-full max-w-[400px] h-[500px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
+            <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
                 <h2 class="text-3xl font-bold">What</h2>
                 <p class="text-md">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec finibus arcu.
@@ -28,9 +28,9 @@ import Pin from '../components/Pin.vue'
                 </p>
             </div>
         </div>
-        <div class="w-[90%] h-fit md:mt-[100px] md:w-full flex gap-2 flex-col justify-center items-center">
+        <div class="w-full h-fit md:mt-[100px] flex gap-2 flex-col justify-center items-center">
             <div class="md:animate-bounce"><Pin/></div>
-            <div class="bg-layer2/60 w-full max-w-[400px] h-[500px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
+            <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
                 <h2 class="text-3xl font-bold">Why</h2>
                 <p class="text-md">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec finibus arcu.
@@ -45,9 +45,9 @@ import Pin from '../components/Pin.vue'
                 </p>
             </div>
         </div>
-        <div class="w-[90%] h-fit md:w-full flex gap-2 flex-col justify-center items-center">
+        <div class="w-full h-fit flex gap-2 flex-col justify-center items-center">
             <div class="md:animate-bounce"><Pin/></div>
-            <div class="bg-layer2/60 w-full max-w-[400px] h-[500px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
+            <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
                 <h2 class="text-3xl font-bold">How</h2>
                 <p class="text-md">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec finibus arcu.
