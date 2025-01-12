@@ -45,7 +45,7 @@ onMounted(() => {
     <div class="absolute draggable bottom-[190px] md:bottom-[30px] left-0 z-[1] w-[99vw] overflow-x-hidden">
         <Filters/>
     </div>
-    <div class="absolute draggable ml-[-21px] md:ml-0 bottom-[10px] md:top-0 md:right-[15px] w-[99vw] md:w-fit md:h-[99dvh] z-[2] overflow-y-hidden md:overflow-y-auto md:overflow-x-hidden">
+    <div class="absolute draggable ml-[-23px] md:ml-0 bottom-[10px] md:top-0 md:right-[15px] w-[99vw] md:w-fit md:h-[99dvh] z-[2] overflow-y-hidden md:overflow-y-auto md:overflow-x-hidden">
         <CardFeed/>
     </div>
     <!-- Map -->
