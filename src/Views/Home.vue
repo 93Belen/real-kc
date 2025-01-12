@@ -4,24 +4,21 @@ import Pin from '../components/Pin.vue'
 import Hero from '../components/Hero.vue'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+
+let animate = ref(false)
 gsap.registerPlugin(ScrollTrigger);
+
 onMounted(() => {
-    document.querySelectorAll('.jump').forEach( el => {
-        gsap.fromTo(
-            el,
-            { y: 0 },
-            {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top center",
-                },
-                onEnter: () => el.classList.add('animate-bounce'),
-                // onLeave: () => el.classList.remove('animate-bounce'),
-                onEnterBack: () => el.classList.add('animate-bounce'),
-                // onLeaveBack: () => el.classList.remove('animate-bounce')
-            }
-        );
+    gsap.to('.jump', {
+        scrollTrigger: {
+            trigger: ".jump",
+            start: "top center",
+            onEnter: () => animate.value = true,
+            onLeaveBack: () => animate.value = false,
+            onEnterBack: () => animate.value = true,
+            onLeave: () => animate.value = false
+        }
     });
 });
 
@@ -39,7 +36,7 @@ onMounted(() => {
     </div>
     <div class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col font-body">
         <div class="w-full h-fit flex gap-2 flex-col justify-center items-center">
-            <div class="jump"><Pin/></div>
+            <div class="jump" :class="animate ? 'animate-bounce' : ''"><Pin/></div>
             <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
                 <h2 class="text-3xl font-bold">What</h2>
                 <p class="text-md">
@@ -56,7 +53,7 @@ onMounted(() => {
             </div>
         </div>
         <div class="w-full h-fit md:mt-[100px] flex gap-2 flex-col justify-center items-center">
-            <div class="jump"><Pin/></div>
+            <div class="jump" :class="animate ? 'animate-bounce' : ''"><Pin/></div>
             <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
                 <h2 class="text-3xl font-bold">Why</h2>
                 <p class="text-md">
@@ -73,7 +70,7 @@ onMounted(() => {
             </div>
         </div>
         <div class="w-full h-fit flex gap-2 flex-col justify-center items-center">
-            <div class="jump"><Pin/></div>
+            <div class="jump" :class="animate ? 'animate-bounce' : ''"><Pin/></div>
             <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
                 <h2 class="text-3xl font-bold">How</h2>
                 <p class="text-md">
