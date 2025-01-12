@@ -82,7 +82,7 @@ const validateAndSave = () => {
                 <FilterChip @click="toggleType(filter.name)" v-for="(filter, index) in filters" v-bind:key="index" :filter="{name: filter.name, selected: content.type.includes(filter.name)}" />
             </div>
         </div>
-        <button @click="validateAndSave" class="underline w-fit">Save</button>
+        <button @touchstart="validateAndSave" @click="validateAndSave" class="underline w-fit">Save</button>
     </div>
 </template>
 <style scoped>
