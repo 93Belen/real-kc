@@ -12,7 +12,8 @@ export const useDbStore = defineStore('db', {
         description: '',
         address: '',
         type: []
-    }
+    },
+    wantToDeleteId: null
   }),
   getters: {
     // example: numberOfFilters: (state) => state.filters.length
@@ -42,8 +43,15 @@ export const useDbStore = defineStore('db', {
             }
         this.getDB()
     },
-    clearToast(){
-        this.toast = null
+    async deleteBusiness(){
+        const response = await supabase.from('local-business').delete().eq('id', this.wantToDeleteId)
+        console.log(response)
+        toast.warning('You have deleted a business!')
+        this.wantToDeleteId = null
+        this.getDB()
+    },
+    updateId(id){
+        this.wantToDeleteId = id
     }
   }
 })

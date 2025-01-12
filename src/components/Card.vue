@@ -1,8 +1,11 @@
 <script setup>
+import { useDbStore } from '../pinia/dbStore'
 import Edit from './Edit.vue'
 import Trash from './Trash.vue'
+
 const props = defineProps(['data'])
 let { name, description, address, type, id } = props.data
+
 
 </script>
 
@@ -15,7 +18,7 @@ let { name, description, address, type, id } = props.data
             <p class="">{{type[0]}}<span v-if="type.length === 2" class="text-primary-green"> | </span><span v-if="type.length === 2">{{type[1]}}</span></p>
             <div class="w-fit gap-2 flex">
                 <Edit/>
-                <Trash/>
+                <Trash :businessId="id" />
             </div>
         </div>
     </div>
