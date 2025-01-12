@@ -1,6 +1,7 @@
 <script setup>
 import GoToSearch from '../components/GoToSearch.vue'
 import Pin from '../components/Pin.vue'
+import Hero from '../components/Hero.vue'
 
 
 </script>
@@ -9,6 +10,9 @@ import Pin from '../components/Pin.vue'
 <div class="w-full h-fit min-h-screen bg-base bg-kc-map bg-center bg-contain p-4 flex flex-col gap-4">
     <div class="w-full flex justify-end">
         <GoToSearch/>
+    </div>
+    <div class="w-[500px] h-[500px] m-auto">
+        <Hero/>
     </div>
     <div class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col font-body">
         <div class="w-full h-fit flex gap-2 flex-col justify-center items-center">
