@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia'
 import { supabase } from '../supabase'
 import { ref } from 'vue'
+import { useToast } from 'vue-toastification'
+const toast = useToast()
 
 export const useDbStore = defineStore('db', {
   state: () => ({
@@ -24,8 +26,24 @@ export const useDbStore = defineStore('db', {
         this.businesses = data
       }
     },
-    updateAddForm(content) {
+    async updateAddForm(content) {
         this.addForm = content
+        const { error } = await supabase.from('local-business').insert(this.addForm)
+        console.log(error)
+        if(!error){
+            console.log('added')
+            toast.success('You have added a business!')
+        }
+        this.addForm = {
+            name: '',
+            description: '',
+            address: '',
+            type: []
+            }
+        this.getDB()
+    },
+    clearToast(){
+        this.toast = null
     }
   }
 })

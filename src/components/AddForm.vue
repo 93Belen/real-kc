@@ -51,6 +51,13 @@ const validateAndSave = () => {
                 if(content.value.type.length > 0){
                     missingBusinessType.value = false
                     dbStore.updateAddForm(content.value)
+                    content.value = {
+                        name: '',
+                        description: '',
+                        address: '',
+                        type: []
+                    }
+                    modalsStore.toggleAddForm()
                 }
                 else {
                     missingBusinessType.value = true
