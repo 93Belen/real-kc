@@ -4,7 +4,13 @@ import { ref } from 'vue'
 
 export const useDbStore = defineStore('db', {
   state: () => ({
-    businesses: ref([]) 
+    businesses: ref([]),
+    addForm: {
+        name: '',
+        description: '',
+        address: '',
+        type: []
+    }
   }),
   getters: {
     // example: numberOfFilters: (state) => state.filters.length
@@ -15,8 +21,11 @@ export const useDbStore = defineStore('db', {
       if (error) {
         console.error("Error fetching data:", error)
       } else {
-        this.businesses = data // Update the businesses reactive state
+        this.businesses = data
       }
+    },
+    updateAddForm(content) {
+        this.addForm = content
     }
   }
 })
