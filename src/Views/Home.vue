@@ -11,7 +11,7 @@ import Hero from '../components/Hero.vue'
     <div class="w-full flex justify-end">
         <GoToSearch/>
     </div>
-    <div class="w-[500px] h-[500px] m-auto">
+    <div class="md:w-[500px] md:h-[500px] m-auto">
         <Hero/>
     </div>
     <div class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col font-body">
