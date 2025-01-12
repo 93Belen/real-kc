@@ -79,7 +79,7 @@ const validateAndSave = () => {
         <textarea :class="missingDescription ? 'border-red' : 'border-white'"  required v-model="content.description" class="border-b-2 bg-transparent outline-none" maxlength="60" placeholder="description" name="" id="" cols="30" rows="1"></textarea>
         <input :class="missingAddress ? 'border-red' : 'border-white'"  required v-model="content.address" class="border-b-2 bg-transparent outline-none" type="text" placeholder="Address">
         <div class="flex flex-col gap-2">
-            <label :class="missingBusinessType ? 'text-red' : ''" class="text-white" for="type">Select max 2 business type</label>
+            <label :class="missingBusinessType ? 'text-red' : 'text-white'" class="" for="type">Select max 2 business type</label>
             <div id="type" class="flex gap-6 min-w-full pr-[20px] overflow-x-scroll">
                 <FilterChip @click="toggleType(filter.name)" v-for="(filter, index) in filters" v-bind:key="index" :filter="{name: filter.name, selected: content.type.includes(filter.name)}" />
             </div>
