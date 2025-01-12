@@ -4,6 +4,7 @@ import GoBack from '../components/GoBack.vue'
 import Add from '../components/Add.vue'
 import Filters from '../components/Filters.vue'
 import CardFeed from '../components/CardFeed.vue'
+import Handle from '../components/Handle.vue'
 import { gsap } from "gsap"; 
 import { Draggable } from "gsap/Draggable";
 import { onMounted } from 'vue'
@@ -37,15 +38,9 @@ onMounted(() => {
         <GoBack/>
         <Add/>
     </div>
-    <div class="absolute z-[2] left-[7px] bottom-[235px] h-fit w-fit">
-        <div class="handle draggable w-[30px] md:hidden h-[40px] grid grid-cols-2 grid-rows-3">
-            <div class="w-[8px] h-[8px] rounded-full bg-gradient-to-br from-primary-green to-primary-pink m-auto"></div>
-            <div class="w-[8px] h-[8px] rounded-full bg-gradient-to-br from-primary-green to-primary-pink m-auto"></div>
-            <div class="w-[8px] h-[8px] rounded-full bg-gradient-to-br from-primary-green to-primary-pink m-auto"></div>
-            <div class="w-[8px] h-[8px] rounded-full bg-gradient-to-br from-primary-green to-primary-pink m-auto"></div>
-            <div class="w-[8px] h-[8px] rounded-full bg-gradient-to-br from-primary-green to-primary-pink m-auto"></div>
-            <div class="w-[8px] h-[8px] rounded-full bg-gradient-to-br from-primary-green to-primary-pink m-auto"></div>
-        </div>
+    <!-- Draggable -->
+    <div class="absolute handle draggable z-[2] left-[7px] bottom-[235px] h-fit w-fit">
+        <Handle/>
     </div>
     <div class="absolute draggable bottom-[190px] md:bottom-[30px] left-0 z-[1] w-[99vw] overflow-x-hidden">
         <Filters/>
