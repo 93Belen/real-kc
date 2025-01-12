@@ -5,9 +5,12 @@ import Add from '../components/Add.vue'
 import Filters from '../components/Filters.vue'
 import CardFeed from '../components/CardFeed.vue'
 import Handle from '../components/Handle.vue'
+import AddForm from '../components/AddForm.vue'
 import { gsap } from "gsap"; 
 import { Draggable } from "gsap/Draggable";
 import { onMounted } from 'vue'
+import { useModalsStore } from '../pinia/modalsStore'
+const modalsStore = useModalsStore()
 
 gsap.registerPlugin(Draggable);
 
@@ -36,7 +39,7 @@ onMounted(() => {
     <!-- Overlaying elements -->
     <div class="absolute top-0 left-0 z-[1] h-fit p-2 md:p-6 flex flex-col gap-2 md:gap-6">
         <GoBack/>
-        <Add/>
+        <Add @click="modalsStore.toggleAddForm" />
     </div>
     <!-- Draggable -->
     <div class="absolute handle draggable z-[2] left-[7px] bottom-[235px] h-fit w-fit">
@@ -47,6 +50,9 @@ onMounted(() => {
     </div>
     <div class="absolute draggable ml-[-23px] md:ml-0 bottom-[10px] md:top-0 md:right-[15px] w-[99vw] md:w-fit md:h-[99dvh] z-[2] overflow-y-hidden md:overflow-y-auto md:overflow-x-hidden">
         <CardFeed/>
+    </div>
+    <div class="overflow-hidden">
+        <div class="absolute z-[3] left-0 duration-[1s]" :class="modalsStore.addForm ? 'bottom-0' : 'bottom-[-100vh]'"><AddForm/></div>
     </div>
     <!-- Map -->
     <div class="absolute top-0 left-0 w-full h-[100dvh] z-0 overflow-hidden">
