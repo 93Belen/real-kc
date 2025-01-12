@@ -51,7 +51,7 @@ onMounted(() => {
     <div class="absolute draggable ml-[-23px] md:ml-0 bottom-[10px] md:top-0 md:right-[15px] w-[99vw] md:w-fit md:h-[99dvh] z-[2] overflow-y-hidden md:overflow-y-auto md:overflow-x-hidden">
         <CardFeed/>
     </div>
-    <div class="overflow-hidden">
+    <div :class="modalsStore.addForm ? '' : 'top-0 absolute h-0'" class="overflow-hidden">
         <div class="absolute z-[3] left-0 duration-[1s]" :class="modalsStore.addForm ? 'bottom-0' : 'bottom-[-100vh]'"><AddForm/></div>
     </div>
     <!-- Map -->
