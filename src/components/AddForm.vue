@@ -42,6 +42,7 @@ const toggleType = (selectedType) => {
 }
 
 const validateAndSave = () => {
+    console.log('clicked')
     if(content.value.name.length > 0){
         missingName.value = false
         if(content.value.description.length > 0){
@@ -84,7 +85,7 @@ const validateAndSave = () => {
                 <FilterChip @click="toggleType(filter.name)" v-for="(filter, index) in filters" v-bind:key="index" :filter="{name: filter.name, selected: content.type.includes(filter.name)}" />
             </div>
         </div>
-        <button @touchend.prevent="validateAndSave" @click="validateAndSave" class="underline w-fit">Save</button>
+        <div @touchstart="validateAndSave" class="underline w-fit">Save</div>
     </div>
 </template>
 <style scoped>
