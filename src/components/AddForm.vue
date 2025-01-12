@@ -3,7 +3,7 @@ import FilterChip from './FilterChip.vue'
 import { useFilterStore } from '../pinia/filterStore'
 import { useDbStore } from '../pinia/dbStore'
 import { useModalsStore } from '../pinia/modalsStore'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 const modalsStore = useModalsStore()
 
@@ -69,9 +69,7 @@ const validateAndSave = () => {
     }
 }
 
-onMounted(() => {
-    document.getElementById('addButton').addEventListener('touchend', validateAndSave)
-})
+
 
 </script>
 
@@ -86,7 +84,7 @@ onMounted(() => {
                 <FilterChip @click="toggleType(filter.name)" v-for="(filter, index) in filters" v-bind:key="index" :filter="{name: filter.name, selected: content.type.includes(filter.name)}" />
             </div>
         </div>
-        <button id="addButton" @click="validateAndSave" class="underline w-fit">Save</button>
+        <button @touchend.prevent="validateAndSave" @click="validateAndSave" class="underline w-fit">Save</button>
     </div>
 </template>
 <style scoped>
