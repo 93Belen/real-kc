@@ -1,5 +1,9 @@
 <script setup>
 import { RouterView } from 'vue-router'
+import { useDbStore } from './pinia/dbStore'
+
+const dbStore = useDbStore()
+dbStore.getDB()
 
 </script>
 
