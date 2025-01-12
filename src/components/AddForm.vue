@@ -4,24 +4,24 @@ import { useFilterStore } from '../pinia/filterStore'
 import { useDbStore } from '../pinia/dbStore'
 import { useModalsStore } from '../pinia/modalsStore'
 import { ref } from 'vue'
-
 const modalsStore = useModalsStore()
-
 const filterStore = useFilterStore()
-const filters = filterStore.filters
-
 const dbStore = useDbStore()
+
+// For checkboxes
+const filters = filterStore.filters
+// For DB
 let content = ref({
     name: '',
     description: '',
     address: '',
     type: []
 })
+//  For validation
 let missingName = ref(false)
 let missingDescription = ref(false)
 let missingAddress = ref(false)
 let missingBusinessType = ref(false)
-
 
 
 
@@ -41,6 +41,7 @@ const toggleType = (selectedType) => {
     }
 }
 
+// Form Validation and Send to Pinia - send to DB
 const validateAndSave = () => {
     if(content.value.name.length > 0){
         missingName.value = false
