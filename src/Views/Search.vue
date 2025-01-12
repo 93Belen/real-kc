@@ -13,7 +13,7 @@ gsap.registerPlugin(Draggable);
 onMounted(() => {
     const mobile = window.innerWidth < 768
     if(mobile){
-            Draggable.create(".draggable", {
+        Draggable.create(".draggable", {
             type: "y",
             handle: '.handle',
             zIndexBoost:false,
@@ -37,10 +37,13 @@ onMounted(() => {
         <GoBack/>
         <Add/>
     </div>
+    <div class="absolute z-[2] bottom-[240px] h-[5px] w-full flex justify-center items-center">
+        <div class="handle draggable w-[50vw] md:hidden h-[5px] rounded-full bg-primary-pink"></div>
+    </div>
     <div class="absolute draggable bottom-[190px] md:bottom-[30px] left-0 z-[1] w-[99vw] overflow-x-hidden">
         <Filters/>
     </div>
-    <div class="absolute draggable handle ml-[-21px] md:ml-0 bottom-[10px] md:top-0 md:right-[15px] w-[99vw] md:w-fit md:h-[99dvh] z-[2] overflow-y-hidden md:overflow-y-auto md:overflow-x-hidden">
+    <div class="absolute draggable ml-[-21px] md:ml-0 bottom-[10px] md:top-0 md:right-[15px] w-[99vw] md:w-fit md:h-[99dvh] z-[2] overflow-y-hidden md:overflow-y-auto md:overflow-x-hidden">
         <CardFeed/>
     </div>
     <!-- Map -->
