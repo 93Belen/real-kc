@@ -37,8 +37,8 @@ onMounted(() => {
         <GoBack/>
         <Add/>
     </div>
-    <div class="absolute z-[2] bottom-[240px] h-[5px] w-full flex justify-center items-center">
-        <div class="handle draggable w-[50vw] md:hidden h-[5px] rounded-full bg-primary-pink"></div>
+    <div class="absolute z-[2] left-0 bottom-[240px] h-[5px] w-full flex justify-center items-center">
+        <div class="handle draggable w-[50vw] md:hidden h-[5px] rounded-full bg-layer3"></div>
     </div>
     <div class="absolute draggable bottom-[190px] md:bottom-[30px] left-0 z-[1] w-[99vw] overflow-x-hidden">
         <Filters/>
