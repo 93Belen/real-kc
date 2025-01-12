@@ -43,12 +43,24 @@ export default {
             transform: 'translateY(0)',
             animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
           },
-          '40%': {
-            transform: 'translateY(-25%)',
+          '20%': {
+            transform: 'translateY(-40%)',
             animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
           },
+          '30%': {
+            transform: 'translateY(0)',
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+          },
+          '40%': {
+            transform: 'translateY(-30%)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+          },
+          '50%': {
+            transform: 'translateY(0)',
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+          },
           '80%': {
-            transform: 'translateY(-15%)',
+            transform: 'translateY(-20%)',
             animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
           },
         },
