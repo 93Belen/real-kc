@@ -52,7 +52,7 @@ onMounted(() => {
         <CardFeed/>
     </div>
     <div :class="modalsStore.addForm ? '' : 'top-0 absolute h-0'" class="overflow-hidden">
-        <div class="absolute z-[3] left-0 duration-[1s]" :class="modalsStore.addForm ? 'bottom-0' : 'bottom-[-100vh]'"><AddForm/></div>
+        <div class="absolute z-[3] left-0 duration-[1s] md:w-fit md:left-[10vw] md:top-[7vh]" :class="modalsStore.addForm ? 'bottom-0 md:opacity-1' : 'bottom-[-100vh] md:opacity-0'"><AddForm/></div>
     </div>
     <!-- Map -->
     <div class="absolute top-0 left-0 w-full h-[100dvh] z-0 overflow-hidden">
