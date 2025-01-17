@@ -101,7 +101,7 @@ const validateAndSave = () => {
     <div class="h-[87dvh] w-screen font-body md:px-12 bg-layer3 rounded-t-xl md:rounded-b-xl md:w-[60vw] md:h-[80vh] md:m-auto md:bg-layer3/60 backdrop-blur-sm flex flex-col justify-around p-4">
         <input :class="missingName ? 'border-red' : 'border-white'" required v-model="content.name" class="border-b-2 bg-transparent outline-none" maxlength="20" type="text" placeholder="Business name">
         <textarea :class="missingDescription ? 'border-red' : 'border-white'"  required v-model="content.description" class="border-b-2 bg-transparent outline-none" maxlength="60" placeholder="description" name="" id="" cols="30" rows="1"></textarea>
-        <input list="address" :class="missingAddress ? 'border-red' : 'border-white'"  required v-model="content.address" class="border-b-2 bg-transparent outline-none" type="text" maxlength="50" placeholder="Address">
+        <input list="address" :class="missingAddress ? 'border-red' : 'border-white'"  required v-model="content.address" class="border-b-2 bg-transparent outline-none" type="text" maxlength="60" placeholder="Address">
         <datalist v-if="mapStore.suggestions.length > 0" id="address">
             <option v-bind:key="index" v-for="(suggestion,index) in mapStore.suggestions" :value="suggestion.text">{{suggestion.text}}</option>
         </datalist>
