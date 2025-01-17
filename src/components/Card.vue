@@ -2,6 +2,7 @@
 import { useDbStore } from '../pinia/dbStore'
 import Edit from './Edit.vue'
 import Trash from './Trash.vue'
+import ShowLocation from './ShowLocation.vue'
 
 const props = defineProps(['data'])
 let { name, description, address, type, id } = props.data
@@ -16,9 +17,10 @@ let { name, description, address, type, id } = props.data
         <p class="">{{description}}</p>
         <div class="w-full flex justify-between gap-4">
             <p class="">{{type[0]}}<span v-if="type.length === 2" class="text-primary-green"> | </span><span v-if="type.length === 2">{{type[1]}}</span></p>
-            <div class="w-fit gap-2 flex">
-                <Edit/>
+            <div class="w-fit gap-4 flex items-end">
+                <!-- <Edit/> -->
                 <Trash :businessId="id" />
+                <ShowLocation/>
             </div>
         </div>
     </div>
