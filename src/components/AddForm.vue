@@ -4,7 +4,9 @@ import { useFilterStore } from '../pinia/filterStore'
 import { useDbStore } from '../pinia/dbStore'
 import { useModalsStore } from '../pinia/modalsStore'
 import { useMapStore } from '../pinia/mapStore'
-import { ref, watch } from 'vue'
+import { onUpdated, ref, watch } from 'vue'
+import { debounce } from 'lodash'
+
 const modalsStore = useModalsStore()
 const filterStore = useFilterStore()
 const dbStore = useDbStore()
@@ -25,9 +27,17 @@ let missingDescription = ref(false)
 let missingAddress = ref(false)
 let missingBusinessType = ref(false)
 
-watch(content.value, (address) => {
+const debouncedFetchSuggestions = debounce((address) => {
+    mapStore.clearSuggestions()
     mapStore.fetchSuggestions(address)
-})
+}, 2000)
+
+watch(() => content.value.address, (newAddress) => {
+        debouncedFetchSuggestions(newAddress)
+    }
+)
+
+
 
 
 
