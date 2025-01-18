@@ -118,7 +118,11 @@ onUpdated(() => {
                 content.lat = option.lat;
                 content.lon = option.lon;
             }"
-            :clearable="false"
+            @option-deselected="(option) => {
+                content.address = '';
+                content.lat = null;
+                content.lon = null;
+            }"
         />
         <div class="flex flex-col gap-2">
             <label :class="missingBusinessType ? 'text-red' : 'text-white'" class="" for="type">Select max 2 business type</label>
