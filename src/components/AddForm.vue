@@ -4,7 +4,7 @@ import { useFilterStore } from '../pinia/filterStore'
 import { useDbStore } from '../pinia/dbStore'
 import { useModalsStore } from '../pinia/modalsStore'
 import { useMapStore } from '../pinia/mapStore'
-import { onUpdated, ref, watch } from 'vue'
+import { onUpdated, ref } from 'vue'
 import { debounce } from 'lodash'
 import VueSelect from "vue3-select-component";
 
@@ -12,6 +12,7 @@ const modalsStore = useModalsStore()
 const filterStore = useFilterStore()
 const dbStore = useDbStore()
 const mapStore = useMapStore()
+
 
 // For checkboxes
 const filters = filterStore.filters
@@ -36,14 +37,6 @@ const debouncedFetchSuggestions = debounce((address) => {
         mapStore.clearSuggestions()
         mapStore.fetchSuggestions(address)
 }, 2000)
-
-watch(() => searching.value, (newAddress) => {
-        debouncedFetchSuggestions(newAddress)
-    }
-)
-
-
-
 
 
 const toggleType = (selectedType) => {
@@ -97,7 +90,9 @@ const validateAndSave = () => {
         missingName.value = true
     }
 }
-
+onUpdated(() => {
+    console.log(content.value)
+})
 
 
 </script>
@@ -111,7 +106,10 @@ const validateAndSave = () => {
             <option v-bind:key="index" v-for="(suggestion,index) in mapStore.suggestions" :value="suggestion.text">{{suggestion.text}}</option>
         </datalist> -->
         <VueSelect
-            @search="(search) => {searching = search}"
+            v-model="searching"
+            @search="(search) => {
+                debouncedFetchSuggestions(search)
+            }"
             :options="mapStore.suggestions"
             :get-option-label="(option) => `${option.text}`"
             @option-selected="(option) => {
