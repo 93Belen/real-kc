@@ -9,18 +9,24 @@ import { onMounted, ref } from 'vue';
 let animate = ref(false)
 gsap.registerPlugin(ScrollTrigger);
 
+
 onMounted(() => {
-    gsap.to('.jump', {
-        scrollTrigger: {
-            trigger: ".jump",
-            start: "top center",
-            onEnter: () => animate.value = true,
-            onLeaveBack: () => animate.value = false,
-            onEnterBack: () => animate.value = true,
-            onLeave: () => animate.value = false
-        }
+    const jumpElements = document.querySelectorAll('.jump');
+
+    // Loop through each element so it works in mobile too - when elements reach the view at different times
+    jumpElements.forEach((element) => {
+        gsap.to(element, {
+            scrollTrigger: {
+                trigger: element,
+                start: "top center",
+                onEnter: () => animate.value = true,
+                onLeaveBack: () => animate.value = false,
+                onEnterBack: () => animate.value = true,
+                onLeave: () => animate.value = false
+            }
+        });
     });
-});
+})
 
 
 
@@ -34,7 +40,7 @@ onMounted(() => {
     <div class="md:w-[500px] md:h-[500px] h-[70dvh] md:h-[90dvh] m-auto">
         <Hero/>
     </div>
-    <div class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col font-body">
+    <div class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col font-body pb-[70px] md:pb-[200px]">
         <div class="w-full h-fit flex gap-2 flex-col justify-center items-center">
             <div class="jump" :class="animate ? 'animate-bounce' : ''"><Pin/></div>
             <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
@@ -88,6 +94,9 @@ onMounted(() => {
             </div>
         </div>
     </div>
+</div>
+<div class="w-full bg-base h-[400px] md:h-[300px]">
+
 </div>
 </template>
 
