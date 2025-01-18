@@ -4,7 +4,7 @@ import { useFilterStore } from '../pinia/filterStore'
 import { useDbStore } from '../pinia/dbStore'
 import { useModalsStore } from '../pinia/modalsStore'
 import { useMapStore } from '../pinia/mapStore'
-import { onUpdated, ref } from 'vue'
+import { ref } from 'vue'
 import { debounce } from 'lodash'
 import VueSelect from "vue3-select-component";
 
@@ -17,9 +17,9 @@ const mapStore = useMapStore()
 // For checkboxes
 const filters = filterStore.filters
 // Searchin
-let searching = ref('')
+const searching = ref('')
 // For DB
-let content = ref({
+const content = ref({
     name: '',
     description: '',
     address: '',
@@ -28,10 +28,10 @@ let content = ref({
     lon: null
 })
 //  For validation
-let missingName = ref(false)
-let missingDescription = ref(false)
-let missingAddress = ref(false)
-let missingBusinessType = ref(false)
+const missingName = ref(false)
+const missingDescription = ref(false)
+const missingAddress = ref(false)
+const missingBusinessType = ref(false)
 
 const debouncedFetchSuggestions = debounce((address) => {
         mapStore.clearSuggestions()
@@ -90,9 +90,7 @@ const validateAndSave = () => {
         missingName.value = true
     }
 }
-onUpdated(() => {
-    console.log(content.value)
-})
+
 
 
 </script>
