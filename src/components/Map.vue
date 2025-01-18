@@ -22,7 +22,7 @@ onMounted(() => {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
     subdomains: "abcd",
     maxZoom: 20,
-    minZoom: 10,
+    minZoom: 9,
     className: 'grayscale invert contrast-[.7] saturate-[0]'
     }).addTo(map);
 
