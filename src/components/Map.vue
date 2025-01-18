@@ -11,8 +11,8 @@ onMounted(() => {
     }).setView([39.0997, -94.5786], 11);
 
     // Define bounds for Kansas City
-    const corner1 = L.latLng(38.837, -94.325); // Southwest corner
-    const corner2 = L.latLng(39.198, -94.896); // Northeast corner
+    const corner1 = L.latLng(38, -94); // Southwest corner
+    const corner2 = L.latLng(40, -95); // Northeast corner
     const bounds = L.latLngBounds(corner1, corner2);
 
     map.setMaxBounds(bounds)
