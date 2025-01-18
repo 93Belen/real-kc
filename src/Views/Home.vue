@@ -47,7 +47,7 @@ onMounted(() => {
     </div>
     <div class="md:w-[500px] md:h-[500px] h-[70dvh] md:h-[90dvh] m-auto flex flex-col justify-center items-center">
         <Hero :inFooter="false"/>
-        <div class="w-fit h-[20vh]"><button @click="goToSearch" class="m-auto w-[150px] bg-gradient-to-r from-primary-green to-primary-pink h-[40px] rounded-full text-white font-bold italic"><p class="w-[140px] h-[32px] border-[3px] flex justify-center items-center border-white rounded-full m-auto">Search</p></button></div>
+        <div class="w-fit h-[40vh]"><button @click="goToSearch" class="m-auto w-[150px] bg-gradient-to-r from-primary-green to-primary-pink h-[40px] rounded-full text-white font-bold italic"><p class="w-[140px] h-[32px] border-[3px] flex justify-center items-center border-white rounded-full m-auto">Search</p></button></div>
     </div>
     <div class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col font-body pb-[70px] md:pb-[200px]">
         <div class="w-full h-fit flex gap-2 flex-col justify-center items-center">
