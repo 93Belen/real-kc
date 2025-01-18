@@ -33,8 +33,8 @@ let missingAddress = ref(false)
 let missingBusinessType = ref(false)
 
 const debouncedFetchSuggestions = debounce((address) => {
-    mapStore.clearSuggestions()
-    mapStore.fetchSuggestions(address)
+        mapStore.clearSuggestions()
+        mapStore.fetchSuggestions(address)
 }, 2000)
 
 watch(() => searching.value, (newAddress) => {
@@ -111,7 +111,6 @@ const validateAndSave = () => {
             <option v-bind:key="index" v-for="(suggestion,index) in mapStore.suggestions" :value="suggestion.text">{{suggestion.text}}</option>
         </datalist> -->
         <VueSelect
-            v-model="content.address"
             @search="(search) => {searching = search}"
             :options="mapStore.suggestions"
             :get-option-label="(option) => `${option.text}`"
@@ -120,6 +119,7 @@ const validateAndSave = () => {
                 content.lat = option.lat;
                 content.lon = option.lon;
             }"
+            :clearable="false"
         />
         <div class="flex flex-col gap-2">
             <label :class="missingBusinessType ? 'text-red' : 'text-white'" class="" for="type">Select max 2 business type</label>
