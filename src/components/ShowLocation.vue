@@ -1,3 +1,11 @@
+<script setup>
+const props = defineProps(['lat', 'lon', 'id'])
+let lat = props.lat
+let lon = props.lon
+let id = props.id
+
+</script>
+
 <template>
     <div class="w-[20px] h-[20px]">
         <svg width="100%" height="100%" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg">

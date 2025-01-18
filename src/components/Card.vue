@@ -5,7 +5,7 @@ import Trash from './Trash.vue'
 import ShowLocation from './ShowLocation.vue'
 
 const props = defineProps(['data'])
-let { name, description, address, type, id } = props.data
+let { name, description, address, type, id, lat, lon } = props.data
 
 
 </script>
@@ -20,7 +20,7 @@ let { name, description, address, type, id } = props.data
             <div class="w-fit gap-4 flex items-end">
                 <!-- <Edit/> -->
                 <Trash :businessId="id" />
-                <ShowLocation/>
+                <ShowLocation :lat="lat" :lon="lon" :id="id" />
             </div>
         </div>
     </div>

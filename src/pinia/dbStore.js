@@ -11,7 +11,9 @@ export const useDbStore = defineStore('db', {
         name: '',
         description: '',
         address: '',
-        type: []
+        type: [],
+        lat: null,
+        lon: null
     },
     wantToDeleteId: null
   }),
@@ -39,7 +41,9 @@ export const useDbStore = defineStore('db', {
             name: '',
             description: '',
             address: '',
-            type: []
+            type: [],
+            lat: null,
+            lon: null
             }
         this.getDB()
     },
