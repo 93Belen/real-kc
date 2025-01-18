@@ -6,14 +6,19 @@ import { useDbStore } from '../pinia/dbStore'
 
 onMounted(() => {
     const dbStore = useDbStore()
-    const map = L.map('map-div', { 
-        zoomControl: false,
-    }).setView([39.0997, -94.5786], 11);
 
     // Define bounds for Kansas City
-    const corner1 = L.latLng(38, -94); // Southwest corner
-    const corner2 = L.latLng(40, -95); // Northeast corner
+    const corner1 = L.latLng(38, -93); // Southwest corner
+    const corner2 = L.latLng(40, -96.200); // Northeast corner
     const bounds = L.latLngBounds(corner1, corner2);
+
+    // Calculate the center of the bounds
+    const center = bounds.getCenter();
+
+    const map = L.map('map-div', { 
+        zoomControl: false,
+    }).setView([center.lat, center.lng], 10);
+
 
     map.setMaxBounds(bounds)
 
@@ -32,7 +37,7 @@ onMounted(() => {
     // Define the custom pin icon
     const customPinIcon = L.icon({
         iconUrl: './pin.svg',
-        iconSize: [30, 30],
+        iconSize: [20, 20],
         className: `pin-id-${business.id} grayscale-0 invert-0 contrast-100 saturate-100`
     });
     L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
