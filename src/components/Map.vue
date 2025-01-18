@@ -7,7 +7,7 @@ import { useDbStore } from '../pinia/dbStore'
 onMounted(() => {
     const dbStore = useDbStore()
     const map = L.map('map-div', { 
-        zoomControl: false
+        zoomControl: false,
     }).setView([39.0997, -94.5786], 11);
 
     // Define bounds for Kansas City
@@ -23,12 +23,14 @@ onMounted(() => {
     subdomains: "abcd",
     maxZoom: 20,
     minZoom: 10,
+    className: 'grayscale invert contrast-[.7] saturate-[0]'
     }).addTo(map);
 
      // Define the custom pin icon
     const customPinIcon = L.icon({
-        iconUrl: './pin.png',
-        iconSize: [40, 40],
+        iconUrl: './pin.svg',
+        iconSize: [30, 30],
+        className: 'grayscale-0 invert-0 contrast-100 saturate-100'
     });
 
   // Add markers for each business
@@ -41,7 +43,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div id="map-div" class="w-screen h-screen bg-base grayscale invert contrast-[.7] saturate-[0]"></div>
+    <div id="map-div" class="w-screen h-screen bg-base"></div>
 </template>
 
 <style scoped>
