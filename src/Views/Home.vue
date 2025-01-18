@@ -2,6 +2,7 @@
 import GoToSearch from '../components/GoToSearch.vue'
 import Pin from '../components/Pin.vue'
 import Hero from '../components/Hero.vue'
+import Footer from '../components/Footer.vue'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { onMounted, ref } from 'vue';
@@ -38,7 +39,7 @@ onMounted(() => {
         <GoToSearch/>
     </div>
     <div class="md:w-[500px] md:h-[500px] h-[70dvh] md:h-[90dvh] m-auto">
-        <Hero/>
+        <Hero :inFooter="false"/>
     </div>
     <div class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col font-body pb-[70px] md:pb-[200px]">
         <div class="w-full h-fit flex gap-2 flex-col justify-center items-center">
@@ -95,8 +96,8 @@ onMounted(() => {
         </div>
     </div>
 </div>
-<div class="w-full bg-base h-[400px] md:h-[300px]">
-
+<div class="w-full bg-base h-[250px] md:h-[200px]">
+    <Footer/>
 </div>
 </template>
 
