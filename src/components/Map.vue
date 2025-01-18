@@ -26,15 +26,15 @@ onMounted(() => {
     className: 'grayscale invert contrast-[.7] saturate-[0]'
     }).addTo(map);
 
-     // Define the custom pin icon
-    const customPinIcon = L.icon({
-        iconUrl: './pin.svg',
-        iconSize: [30, 30],
-        className: 'grayscale-0 invert-0 contrast-100 saturate-100'
-    });
 
   // Add markers for each business
   dbStore.businesses.forEach((business) => {
+    // Define the custom pin icon
+    const customPinIcon = L.icon({
+        iconUrl: './pin.svg',
+        iconSize: [30, 30],
+        className: `pin-id-${business.id} grayscale-0 invert-0 contrast-100 saturate-100`
+    });
     L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
   });
 
