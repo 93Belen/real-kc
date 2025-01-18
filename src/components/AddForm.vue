@@ -6,7 +6,7 @@ import { useModalsStore } from '../pinia/modalsStore'
 import { useMapStore } from '../pinia/mapStore'
 import { onUpdated, ref, watch } from 'vue'
 import { debounce } from 'lodash'
-import Multiselect from 'vue-multiselect'
+import VueSelect from "vue3-select-component";
 
 const modalsStore = useModalsStore()
 const filterStore = useFilterStore()
@@ -15,6 +15,8 @@ const mapStore = useMapStore()
 
 // For checkboxes
 const filters = filterStore.filters
+// Searchin
+let searching = ref('')
 // For DB
 let content = ref({
     name: '',
@@ -35,7 +37,7 @@ const debouncedFetchSuggestions = debounce((address) => {
     mapStore.fetchSuggestions(address)
 }, 2000)
 
-watch(() => content.value.address, (newAddress) => {
+watch(() => searching.value, (newAddress) => {
         debouncedFetchSuggestions(newAddress)
     }
 )
@@ -104,10 +106,21 @@ const validateAndSave = () => {
     <div class="h-[87dvh] w-screen font-body md:px-12 bg-layer3 rounded-t-xl md:rounded-b-xl md:w-[60vw] md:h-[80vh] md:m-auto md:bg-layer3/60 backdrop-blur-sm flex flex-col justify-around p-4">
         <input :class="missingName ? 'border-red' : 'border-white'" required v-model="content.name" class="border-b-2 bg-transparent outline-none" maxlength="20" type="text" placeholder="Business name">
         <textarea :class="missingDescription ? 'border-red' : 'border-white'"  required v-model="content.description" class="border-b-2 bg-transparent outline-none" maxlength="60" placeholder="description" name="" id="" cols="30" rows="1"></textarea>
-        <input list="address" :class="missingAddress ? 'border-red' : 'border-white'"  required v-model="content.address" class="border-b-2 bg-transparent outline-none" type="text" maxlength="70" placeholder="Search address">
+        <!-- <input list="address" :class="missingAddress ? 'border-red' : 'border-white'"  required v-model="content.address" class="border-b-2 bg-transparent outline-none" type="text" maxlength="70" placeholder="Search address">
         <datalist v-if="mapStore.suggestions.length > 0" id="address">
             <option v-bind:key="index" v-for="(suggestion,index) in mapStore.suggestions" :value="suggestion.text">{{suggestion.text}}</option>
-        </datalist>
+        </datalist> -->
+        <VueSelect
+            v-model="content.address"
+            @search="(search) => {searching = search}"
+            :options="mapStore.suggestions"
+            :get-option-label="(option) => `${option.text}`"
+            @option-selected="(option) => {
+                content.address = option.text;
+                content.lat = option.lat;
+                content.lon = option.lon;
+            }"
+        />
         <div class="flex flex-col gap-2">
             <label :class="missingBusinessType ? 'text-red' : 'text-white'" class="" for="type">Select max 2 business type</label>
             <div id="type" class="flex gap-6 min-w-full pr-[20px] overflow-x-scroll">
