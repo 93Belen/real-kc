@@ -110,7 +110,8 @@ onUpdated(() => {
             @search="(search) => {
                 debouncedFetchSuggestions(search)
             }"
-            :options="mapStore.suggestions"
+            :options="[{text: content.address, lat: null, lon: null}]"
+            :displayedOptions="mapStore.suggestions"
             :get-option-label="(option) => `${option.text}`"
             @option-selected="(option) => {
                 content.address = option.text;
