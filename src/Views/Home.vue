@@ -35,7 +35,7 @@ onMounted(() => {
 
 <template>
 <div class="w-full h-fit min-h-screen bg-base bg-kc-map bg-center bg-contain p-4 flex flex-col gap-4">
-    <div class="w-full flex justify-end">
+    <div class="w-full flex justify-end cursor-pointer">
         <GoToSearch/>
     </div>
     <div class="md:w-[500px] md:h-[500px] h-[70dvh] md:h-[90dvh] m-auto">
