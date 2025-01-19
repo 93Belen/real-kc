@@ -9,13 +9,13 @@ export const useMapStore = defineStore('map', {
     async fetchSuggestions(query) {
         try {
             const response = await fetch(
-                `https://nominatim.openstreetmap.org/search?q=${query}&format=json&addressdetails=1&viewbox=${-94.896},${39.198},${-94.325},${38.837}&bounded=1&limit=30`
+                `https://nominatim.openstreetmap.org/search?q=${query}&format=json&addressdetails=1&viewbox=${-94.896},${39.198},${-94.325},${38.837}&bounded=1&limit=30&layer=address,poi`
               );                           
             const data = await response.json();
             data.forEach(suggestion => {
-              const displayArr = suggestion.display_name.split(',')
+              const displayArr = suggestion.display_name.split(', ')
                 this.suggestions.push({
-                    text: `${displayArr[0]}, ${displayArr[1]}, ${displayArr[2]}`,
+                    text: `${displayArr[0]} ${displayArr[1]} ${displayArr[2]}`,
                     lat: suggestion.lat,
                     lon: suggestion.lon
                 })
