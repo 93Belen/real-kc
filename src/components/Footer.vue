@@ -5,11 +5,12 @@ import Heart from './Heart.vue'
 
 
 <template>
-    <div class="w-full h-full flex flex-col md:flex-row justify-between p-6 text-lg md:items-end">
-        <div class="flex flex-col gap-6 md:w-[30vw]">
-            <a href="" class="hover:underline underline-offset-1 hover:underline-offset-4 hover:text-primary-green duration-1000 decoration-primary-white hover:decoration-primary-pink">Donate</a>
+    <div class="w-full h-full flex md:flex-row justify-between p-6 text-lg md:items-end">
+        <div class="flex text-md font-thin flex-col gap-4 md:w-[30vw] self-end">
             <a href="" class="hover:underline underline-offset-1 hover:underline-offset-4 hover:text-primary-green duration-1000 decoration-primary-white hover:decoration-primary-pink">Contact</a>
+            <a href="" class="hover:underline underline-offset-1 hover:underline-offset-4 hover:text-primary-green duration-1000 decoration-primary-white hover:decoration-primary-pink">Contribute</a>
             <a href="" class="hover:underline underline-offset-1 hover:underline-offset-4 hover:text-primary-green duration-1000 decoration-primary-white hover:decoration-primary-pink">Report a bug</a>
+            <a href="" class="hover:underline underline-offset-1 hover:underline-offset-4 hover:text-primary-green duration-1000 decoration-primary-white hover:decoration-primary-pink">Buy me a coffee</a>
         </div>
         <div class="hidden md:block h-full w-auto">
             <Hero :inFooter="true" />

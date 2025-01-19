@@ -113,7 +113,7 @@ onMounted(() => {
         </div>
     </div>
 </div>
-<div class="w-full bg-base h-[250px] md:h-[200px]">
+<div class="w-full bg-base h-[220px] md:h-[200px]">
     <Footer/>
 </div>
 </template>
