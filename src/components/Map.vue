@@ -1,12 +1,12 @@
 <script setup>
 import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
-import { onMounted } from "vue";
+import { onMounted, watch } from "vue";
 import { useDbStore } from '../pinia/dbStore'
+const dbStore = useDbStore()
+let map;
 
 onMounted(() => {
-    const dbStore = useDbStore()
-
     // Define bounds for Kansas City
     const corner1 = L.latLng(38, -93); // Southwest corner
     const corner2 = L.latLng(40, -96.200); // Northeast corner
@@ -15,7 +15,7 @@ onMounted(() => {
     // Calculate the center of the bounds
     const center = bounds.getCenter();
 
-    const map = L.map('map-div', { 
+    map = L.map('map-div', { 
         zoomControl: false,
     }).setView([center.lat, center.lng], 10);
 
@@ -43,6 +43,19 @@ onMounted(() => {
     L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
   });
 
+})
+
+watch(()=> dbStore.businesses, () => {
+ // Add markers for each business
+  dbStore.businesses.forEach((business) => {
+    // Define the custom pin icon
+    const customPinIcon = L.icon({
+        iconUrl: './pin.svg',
+        iconSize: [20, 20],
+        className: `pin pin-id-${business.id} grayscale-0 invert-0 contrast-100 saturate-100`
+    });
+    L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
+  });
 })
 
 </script>
