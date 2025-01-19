@@ -28,7 +28,7 @@ onMounted(() => {
     subdomains: "abcd",
     maxZoom: 20,
     minZoom: 9,
-    className: 'grayscale invert contrast-[.7] saturate-[0]'
+    className: 'grayscale invert contrast-[1.5] saturate-[0.5] brightness-[0.75]'
     }).addTo(map);
 
 

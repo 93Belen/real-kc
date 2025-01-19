@@ -29,7 +29,7 @@ export default {
         'layer4': '#6E6D6D'
       },
       backgroundImage: {
-        'kc-map': "url('/bg-map.png')"
+        'kc-map': "url('/bg-map-dark.png')"
       },
       boxShadow: {
         'sm': '0 0 0 5px rgba(255, 255, 255, 1)',
