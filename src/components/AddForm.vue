@@ -106,7 +106,8 @@ const validateAndSave = () => {
                 placeholder=""
                 v-model="searching"
                 @search="(search) => {
-                    debouncedFetchSuggestions(search)
+                    const normalizedSearch = search.toLowerCase().trim().replace(/,+/g, ' ');
+                    debouncedFetchSuggestions(normalizedSearch)
                 }"
                 :options="[{text: content.address, lat: null, lon: null}]"
                 :displayedOptions="mapStore.suggestions"
