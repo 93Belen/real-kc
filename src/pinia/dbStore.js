@@ -2,11 +2,13 @@ import { defineStore } from 'pinia'
 import { supabase } from '../supabase'
 import { ref } from 'vue'
 import { useToast } from 'vue-toastification'
+import {filtersArr} from '../assets/Filters'
 const toast = useToast()
 
 export const useDbStore = defineStore('db', {
   state: () => ({
     businesses: ref([]),
+    businessesByFilter: {},
     addForm: {
         name: '',
         description: '',
@@ -29,6 +31,17 @@ export const useDbStore = defineStore('db', {
         this.businesses = data
       }
     },
+    async getDataByFilter() {
+      for (const filter of filtersArr) {
+        console.log(filter)
+        const { data, error } = await supabase.from('local-business').select().containedBy('type', [filter])
+        if (error) {
+          console.error("Error fetching data:", error)
+        } else {
+          this.businessesByFilter[filter] = data
+        }
+      }
+    },    
     async updateAddForm(content) {
         this.addForm = content
         const { error } = await supabase.from('local-business').insert(this.addForm)

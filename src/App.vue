@@ -4,6 +4,7 @@ import { useDbStore } from './pinia/dbStore'
 
 const dbStore = useDbStore()
 dbStore.getDB()
+dbStore.getDataByFilter()
 
 </script>
 
