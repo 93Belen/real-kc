@@ -103,6 +103,7 @@ const validateAndSave = () => {
             <label for="address">Search Address</label>
             <VueSelect
                 id="address"
+                placeholder=""
                 v-model="searching"
                 @search="(search) => {
                     debouncedFetchSuggestions(search)
