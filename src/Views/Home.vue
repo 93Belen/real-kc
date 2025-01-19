@@ -50,9 +50,9 @@ onMounted(() => {
         <div class="w-fit h-[40vh]">
         <button 
         @click="goToSearch" 
-        class="m-auto w-[150px] h-[40px] rounded-full hover:text-white font-bold italic bg-secondary-yellow/80 transition-all duration-[2000ms] text-black hover:bg-secondary-red/70"
+        class="m-auto w-[150px] h-[40px] rounded-full text-white font-bold italic bg-secondary-red/80"
         >
-        <p class="w-[140px] h-[32px] border-[3px] flex justify-center items-center border-black rounded-full m-auto">
+        <p class="w-[140px] h-[32px] flex justify-center items-center bg-layer2 hover:bg-transparent duration-[1s] rounded-full m-auto">
         Search
         </p>
         </button>
@@ -113,7 +113,7 @@ onMounted(() => {
         </div>
     </div>
 </div>
-<div class="w-full bg-base h-[220px] md:h-[200px]">
+<div class="w-full bg-base h-[180px]">
     <Footer/>
 </div>
 </template>
