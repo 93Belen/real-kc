@@ -36,7 +36,7 @@ const missingBusinessType = ref(false)
 const debouncedFetchSuggestions = debounce((address) => {
         mapStore.clearSuggestions()
         mapStore.fetchSuggestions(address)
-}, 2000)
+}, 1000)
 
 
 const toggleType = (selectedType) => {
@@ -99,25 +99,29 @@ const validateAndSave = () => {
     <div class="h-[87dvh] w-screen font-body md:px-12 bg-layer3 rounded-t-xl md:rounded-b-xl md:w-[60vw] md:h-[80vh] md:m-auto md:bg-layer3/60 backdrop-blur-sm flex flex-col justify-around p-4">
         <input :class="missingName ? 'border-red' : 'border-white'" required v-model="content.name" class="border-b-2 bg-transparent outline-none" maxlength="20" type="text" placeholder="Business name">
         <textarea :class="missingDescription ? 'border-red' : 'border-white'"  required v-model="content.description" class="border-b-2 bg-transparent outline-none" maxlength="60" placeholder="description" name="" id="" cols="30" rows="1"></textarea>
-        <VueSelect
-            v-model="searching"
-            @search="(search) => {
-                debouncedFetchSuggestions(search)
-            }"
-            :options="[{text: content.address, lat: null, lon: null}]"
-            :displayedOptions="mapStore.suggestions"
-            :get-option-label="(option) => `${option.text}`"
-            @option-selected="(option) => {
-                content.address = option.text;
-                content.lat = option.lat;
-                content.lon = option.lon;
-            }"
-            @option-deselected="(option) => {
-                content.address = '';
-                content.lat = null;
-                content.lon = null;
-            }"
-        />
+        <div class="flex flex-col gap-2">
+            <label for="address">Search Address</label>
+            <VueSelect
+                id="address"
+                v-model="searching"
+                @search="(search) => {
+                    debouncedFetchSuggestions(search)
+                }"
+                :options="[{text: content.address, lat: null, lon: null}]"
+                :displayedOptions="mapStore.suggestions"
+                :get-option-label="(option) => `${option.text}`"
+                @option-selected="(option) => {
+                    content.address = option.text;
+                    content.lat = option.lat;
+                    content.lon = option.lon;
+                }"
+                @option-deselected="(option) => {
+                    content.address = '';
+                    content.lat = null;
+                    content.lon = null;
+                }"
+            />
+        </div>
         <div class="flex flex-col gap-2">
             <label :class="missingBusinessType ? 'text-red' : 'text-white'" class="" for="type">Select max 2 business type</label>
             <div id="type" class="flex gap-6 min-w-full pr-[20px] overflow-x-scroll">

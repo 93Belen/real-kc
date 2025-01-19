@@ -3,19 +3,34 @@ import Hero from './Hero.vue'
 import Heart from './Heart.vue'
 import { router } from '../router'
 import {RouterLink} from 'vue-router'
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
 
 const goToSearch = () => {
     router.push('/search')
 }
+
+
+function copyUrl() {
+    const url = 'https://tangerine-kleicha-283ca9.netlify.app/'
+    navigator.clipboard.writeText(url);
+    toast.success('Link copied!')
+}
+
+
+
+
+
 </script>
 
 
 <template>
     <div class="w-full h-full flex flex-col md:flex-row justify-between p-6 md:p-8 text-lg gap-6 md:gap-0 md:items-end">
         <div class="flex text-md font-thin flex-col gap-4 md:w-[30vw] md:self-end">
-            <button @click="goToSearch" class="cursor-pointer w-fit hover:underline underline-offset-1 hover:underline-offset-4 hover:text-primary-green duration-1000 decoration-primary-white hover:decoration-secondary-yellow">Search</button>
-            <a href="" class="w-fit hover:underline underline-offset-1 hover:underline-offset-4 hover:text-primary-green duration-1000 decoration-primary-white hover:decoration-secondary-yellow">Report a bug</a>
-            <p class="w-fit hover:underline underline-offset-1 hover:underline-offset-4 hover:text-primary-green duration-1000 decoration-primary-white hover:decoration-secondary-yellow">Search Real KC | 2025</p>
+            <button @click="goToSearch" class="w-fit hover:underline underline-offset-1 hover:underline-offset-4 hover:text-primary-green duration-1000 decoration-primary-white hover:decoration-secondary-yellow">Search</button>
+            <button @click="copyUrl" class="cursor-pointer w-fit hover:underline underline-offset-1 hover:underline-offset-4 hover:text-primary-green duration-1000 decoration-primary-white hover:decoration-secondary-yellow">Copy Link</button>
+            <!-- <button class="w-fit hover:underline underline-offset-1 hover:underline-offset-4 hover:text-primary-green duration-1000 decoration-primary-white hover:decoration-secondary-yellow">Report a bug</button> -->
         </div>
         <div class="hidden md:block h-full w-auto">
             <Hero :inFooter="true" />
