@@ -1,6 +1,10 @@
 <script setup>
 const props = defineProps(['filter'])
 let { name } = props.filter
+
+
+
+
 </script>
 
 <template>

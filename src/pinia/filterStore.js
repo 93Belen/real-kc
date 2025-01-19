@@ -16,5 +16,12 @@ export const useFilterStore = defineStore('filter', {
           this.filters[filter].selected = !this.filters[filter].selected
         }
       },
+      deselectAll(filterSelected) {
+        for (const filter in this.filters) {
+          if (filter !== filterSelected) {
+            this.filters[filter].selected = false
+          }
+        }
+      }
     },
   })

@@ -9,6 +9,7 @@ export const useDbStore = defineStore('db', {
   state: () => ({
     businesses: ref([]),
     businessesByFilter: {},
+    display: [],
     addForm: {
         name: '',
         description: '',
@@ -20,7 +21,7 @@ export const useDbStore = defineStore('db', {
     wantToDeleteId: null
   }),
   getters: {
-    // example: numberOfFilters: (state) => state.filters.length
+
   },
   actions: {
     async getDB() {
@@ -33,15 +34,22 @@ export const useDbStore = defineStore('db', {
     },
     async getDataByFilter() {
       for (const filter of filtersArr) {
-        console.log(filter)
-        const { data, error } = await supabase.from('local-business').select().containedBy('type', [filter])
+        const { data, error } = await supabase.from('local-business').select().filter('type', 'cs', `{${filter}}`)
         if (error) {
           console.error("Error fetching data:", error)
         } else {
           this.businessesByFilter[filter] = data
         }
       }
-    },    
+    },  
+    setDisplay(type){
+      if(type === 'all'){
+        this.display = this.businesses
+      }
+      else {
+        this.display = this.businessesByFilter[type]
+      }    
+    },
     async updateAddForm(content) {
         this.addForm = content
         const { error } = await supabase.from('local-business').insert(this.addForm)
