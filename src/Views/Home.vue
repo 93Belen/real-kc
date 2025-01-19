@@ -3,6 +3,7 @@ import GoToSearch from '../components/GoToSearch.vue'
 import Pin from '../components/Pin.vue'
 import Hero from '../components/Hero.vue'
 import Footer from '../components/Footer.vue'
+import Beta from '../components/Beta.vue'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { onMounted, ref } from 'vue';
@@ -47,6 +48,7 @@ onMounted(() => {
     </div>
     <div class="md:w-[500px] md:h-[500px] h-[70dvh] md:h-[90dvh] m-auto flex flex-col justify-center items-center">
         <Hero :inFooter="false"/>
+        <div class="w-[200px] h-[50px] relative md:left-[200px] top-[-70px] left-[30vw] md:top-[-100px]"><Beta/></div>
         <div class="w-fit h-[40vh]">
         <button 
         @click="goToSearch" 
@@ -63,16 +65,11 @@ onMounted(() => {
             <div class="jump" :class="animate ? 'animate-bounce' : ''"><Pin/></div>
             <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
                 <h2 class="text-3xl font-bold">What</h2>
-                <p class="text-md">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec finibus arcu.
-                Nam et fringilla tortor. Suspendisse sed lectus lacus.
-                In at felis nisi. In varius vehicula velit ac elementum.
-                In ut tempor dui, vitae laoreet tellus. Maecenas ut aliquam magna.
-                Ut sed lectus consequat, varius est eu, ultricies ipsum. Ut quis erat vitae sapien feugiat dignissim vel ut metus.
-                Sed aliquam justo metus, at elementum est 
-                Nam et fringilla tortor. Suspendisse sed lectus lacus.
-                In at felis nisi. In varius vehicula velit ac elementum.
-                In at felis nisi. In varius vehicula velit ac elementum.
+                <p class="text-md leading-8">
+                <span class="font-bold italic">Search Real KC Beta</span> is the first step toward a project I've had in mind for a long time.<br/> 
+                In the Search page, users can add, remove, and search for small, locally-owned businesses in the Kansas City area.<br/>
+                This site aims to be simple and accessible to everyone.<br/>
+                The beta version is intentionally simple, serving as a foundation for a more advanced and feature-rich platform in the future.
                 </p>
             </div>
         </div>
@@ -80,16 +77,11 @@ onMounted(() => {
             <div class="jump" :class="animate ? 'animate-bounce' : ''"><Pin/></div>
             <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
                 <h2 class="text-3xl font-bold">Why</h2>
-                <p class="text-md">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec finibus arcu.
-                Nam et fringilla tortor. Suspendisse sed lectus lacus.
-                In at felis nisi. In varius vehicula velit ac elementum.
-                In ut tempor dui, vitae laoreet tellus. Maecenas ut aliquam magna.
-                Ut sed lectus consequat, varius est eu, ultricies ipsum. Ut quis erat vitae sapien feugiat dignissim vel ut metus.
-                Sed aliquam justo metus, at elementum est 
-                Nam et fringilla tortor. Suspendisse sed lectus lacus.
-                In at felis nisi. In varius vehicula velit ac elementum.
-                In at felis nisi. In varius vehicula velit ac elementum.
+               <p class="text-md leading-8">
+                When I moved to America, one of the biggest cultural shocks was the difficulty of finding family-owned and locally-owned businesses.<br/>
+                Most commerces are corporations, chains, and franchises.<br/>
+                Stablishments that populate streets in many parts of the world, like small fruit and vegetable stores, or unique restaurants, are rare here.<br/>
+                I created this project because I want to put my money where my morals are and help others do the same.
                 </p>
             </div>
         </div>
@@ -97,16 +89,11 @@ onMounted(() => {
             <div class="jump" :class="animate ? 'animate-bounce' : ''"><Pin/></div>
             <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
                 <h2 class="text-3xl font-bold">How</h2>
-                <p class="text-md">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec finibus arcu.
-                Nam et fringilla tortor. Suspendisse sed lectus lacus.
-                In at felis nisi. In varius vehicula velit ac elementum.
-                In ut tempor dui, vitae laoreet tellus. Maecenas ut aliquam magna.
-                Ut sed lectus consequat, varius est eu, ultricies ipsum. Ut quis erat vitae sapien feugiat dignissim vel ut metus.
-                Sed aliquam justo metus, at elementum est 
-                Nam et fringilla tortor. Suspendisse sed lectus lacus.
-                In at felis nisi. In varius vehicula velit ac elementum.
-                In at felis nisi. In varius vehicula velit ac elementum.
+                <p class="text-md leading-8">
+                Browse businesses, filter them by type, and locate them on the map by clicking the pin icon on their card.<br/>
+                When adding or deleting a business, please remember that this is crowd-sourced information. 
+                Add only small, locally-owned businesses, and don't remove a business unless it no longer exists or doesn’t meet the criteria.<br/>
+                <span class="italic text-sm">Since this project minimizes reliance on paid services, the address field in the Add Form may require some patience.</span>
 
                 </p>
             </div>
