@@ -20,7 +20,7 @@ let { name, description, address, type, id, lat, lon } = props.data
             <div class="w-fit gap-4 flex items-end">
                 <!-- <Edit/> -->
                 <Trash :businessId="id" />
-                <ShowLocation :lat="lat" :lon="lon" :id="id" />
+                <ShowLocation :id="id" />
             </div>
         </div>
     </div>
