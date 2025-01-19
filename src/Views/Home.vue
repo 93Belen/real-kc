@@ -48,7 +48,7 @@ onMounted(() => {
     </div>
     <div class="md:w-[500px] md:h-[500px] h-[70dvh] md:h-[90dvh] m-auto flex flex-col justify-center items-center">
         <Hero :inFooter="false"/>
-        <div class="w-[200px] h-[50px] relative md:left-[200px] top-[-70px] left-[30vw] md:top-[-100px]"><Beta/></div>
+        <div class="w-[200px] h-[50px] relative md:left-[200px] top-[-10dvh] left-[30vw] md:top-[-20vh]"><Beta/></div>
         <div class="w-fit h-[40vh]">
         <button 
         @click="goToSearch" 
