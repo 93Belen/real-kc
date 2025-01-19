@@ -50,7 +50,7 @@ onMounted(() => {
         <div class="w-fit h-[40vh]">
         <button 
         @click="goToSearch" 
-        class="m-auto w-[150px] h-[40px] rounded-full text-white font-bold italic bg-secondary-red/80"
+        class="m-auto w-[150px] h-[40px] rounded-full text-white font-bold italic bg-secondary-yellow/70"
         >
         <p class="w-[140px] h-[32px] flex justify-center items-center bg-layer2 hover:bg-transparent duration-[1s] rounded-full m-auto">
         Search
