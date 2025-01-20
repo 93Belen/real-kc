@@ -93,7 +93,7 @@ onMounted(() => {
                 Browse businesses, filter them by type, and locate them on the map by clicking the pin icon on their card.<br/>
                 When adding or deleting a business, please remember that this is crowd-sourced information. 
                 Add only small, locally-owned businesses, and don't remove a business unless it no longer exists or doesn’t meet the criteria.<br/>
-                <span class="italic text-sm">Since this project minimizes reliance on paid services, the address field in the Add Form may require some patience.</span>
+                <span class="italic text-sm">Since this project tries to avoid reliance on big businesses (like Google), the address field in the Add Form may require some patience.</span>
 
                 </p>
             </div>
