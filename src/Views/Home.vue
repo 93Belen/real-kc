@@ -80,7 +80,7 @@ onMounted(() => {
                <p class="text-md leading-8">
                 When I moved to America, one of the biggest cultural shocks was the difficulty of finding family-owned and locally-owned businesses.<br/>
                 Most commerces are corporations, chains, and franchises.<br/>
-                Stablishments that populate streets in many parts of the world, like small fruit and vegetable stores, or unique restaurants, are rare here.<br/>
+                Establishments that populate streets in many parts of the world, like small fruit and vegetable stores, or unique restaurants, are rare here.<br/>
                 I created this project because I want to put my money where my morals are and help others do the same.
                 </p>
             </div>
