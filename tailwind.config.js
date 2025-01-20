@@ -67,75 +67,57 @@ export default {
         },
         flicker: {
           '0%': {
-            boxShadow: '0px 0px 15px 5px #42B8A2',
             opacity: '1',
           },
           '10%': {
-            boxShadow: '0px 0px 20px 8px #42B8A2',
             opacity: '1',
           },
           '20%': {
-            boxShadow: '0px 0px 10px 3px #42B8A2',
             opacity: '0.9',
           },
           '30%': {
-            boxShadow: '0px 0px 25px 12px #33A18C',
             opacity: '1',
           },
           '40%': {
-            boxShadow: '0px 0px 15px 5px #42B8A2',
             opacity: '0.7',
           },
           '45%': {
-            boxShadow: '0px 0px 30px 10px #33A18C',
             opacity: '1',
           },
           '50%': {
-            boxShadow: '0px 0px 15px 5px #42B8A2',
             opacity: '1',
           },
           '55%': {
-            boxShadow: '0px 0px 10px 3px #42B8A2',
             opacity: '0.6',
           },
           '56%': {
-            boxShadow: '0px 0px 10px 3px #42B8A2',
             opacity: '0.8',
           },
           '57%': {
-            boxShadow: '0px 0px 10px 3px #42B8A2',
             opacity: '0.4',
           },
           '58%': {
-            boxShadow: '0px 0px 10px 3px #42B8A2',
             opacity: '0.5',
           },
           '59%': {
-            boxShadow: '0px 0px 10px 3px #42B8A2',
-            opacity: '01',
+            opacity: '1',
           },
           '80%': {
-            boxShadow: '0px 0px 25px 8px #33A18C',
             opacity: '1',
           },
           '90%': {
-            boxShadow: '0px 0px 15px 5px #42B8A2',
             opacity: '0.8',
           },
           '91%': {
-            boxShadow: '0px 0px 15px 5px #42B8A2',
             opacity: '0.5',
           },
           '92%': {
-            boxShadow: '0px 0px 15px 5px #42B8A2',
             opacity: '0.7',
           },
           '93%': {
-            boxShadow: '0px 0px 15px 5px #42B8A2',
             opacity: '0.2',
           },
           '100%': {
-            boxShadow: '0px 0px 20px 6px #42B8A2',
             opacity: '1',
           },
         },
