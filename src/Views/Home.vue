@@ -63,8 +63,8 @@ onMounted(() => {
     <div class="w-full h-fit flex md:flex-row gap-12 justify-center items-center flex-col font-body pb-[70px] md:pb-[200px]">
         <div class="w-full h-fit flex gap-2 flex-col justify-center items-center">
             <div class="jump" :class="animate ? 'animate-bounce' : ''"><Pin/></div>
-            <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
-                <h2 class="text-3xl font-bold">What</h2>
+            <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-4 flex flex-col">
+                <h2 class="text-3xl font-bold text-primary-green font-secondary">What</h2>
                 <p class="text-md leading-8">
                 <span class="font-bold italic">Search Real KC Beta</span> is the first step toward a project I've had in mind for a long time.<br/> 
                 In the Search page, users can add, remove, and search for small, locally-owned businesses in the Kansas City area.<br/>
@@ -75,8 +75,8 @@ onMounted(() => {
         </div>
         <div class="w-full h-fit md:mt-[100px] flex gap-2 flex-col justify-center items-center">
             <div class="jump" :class="animate ? 'animate-bounce' : ''"><Pin/></div>
-            <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
-                <h2 class="text-3xl font-bold">Why</h2>
+            <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-4 flex flex-col">
+                <h2 class="text-3xl font-bold text-primary-green font-secondary">Why</h2>
                <p class="text-md leading-8">
                 When I moved to America, one of the biggest cultural shocks was the difficulty of finding family-owned and locally-owned businesses.<br/>
                 Most commerces are corporations, chains, and franchises.<br/>
@@ -87,8 +87,8 @@ onMounted(() => {
         </div>
         <div class="w-full h-fit flex gap-2 flex-col justify-center items-center">
             <div class="jump" :class="animate ? 'animate-bounce' : ''"><Pin/></div>
-            <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-8 flex flex-col">
-                <h2 class="text-3xl font-bold">How</h2>
+            <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-4 flex flex-col">
+                <h2 class="text-3xl font-bold text-primary-green font-secondary">How</h2>
                 <p class="text-md leading-8">
                 Browse businesses, filter them by type, and locate them on the map by clicking the pin icon on their card.<br/>
                 When adding or deleting a business, please remember that this is crowd-sourced information. 

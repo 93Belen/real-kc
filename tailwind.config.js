@@ -7,7 +7,7 @@ export default {
   theme: {
     fontFamily: {
       'body': ['Montserrat'],
-      'h1': ['Orbitron']
+      'secondary': ['Orbitron']
     },
     extend: {
       colors: {
