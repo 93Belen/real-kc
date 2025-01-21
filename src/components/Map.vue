@@ -37,7 +37,7 @@ onMounted(() => {
     // Define the custom pin icon
     const customPinIcon = L.icon({
         iconUrl: './pin.svg',
-        iconSize: [20, 20],
+        iconSize: [15, 15],
         className: `pin pin-id-${business.id} grayscale-0 invert-0 contrast-100 saturate-100`
     });
     L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
@@ -51,7 +51,7 @@ watch(()=> dbStore.businesses, () => {
     // Define the custom pin icon
     const customPinIcon = L.icon({
         iconUrl: './pin.svg',
-        iconSize: [20, 20],
+        iconSize: [15, 15],
         className: `pin pin-id-${business.id} grayscale-0 invert-0 contrast-100 saturate-100`
     });
     L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
