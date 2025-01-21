@@ -94,12 +94,15 @@ export default {
             opacity: '0.8',
           },
           '57%': {
-            opacity: '0.4',
+            opacity: '0.3',
           },
           '58%': {
             opacity: '0.5',
           },
           '59%': {
+            opacity: '0.1',
+          },
+          '60%': {
             opacity: '1',
           },
           '80%': {
@@ -109,13 +112,13 @@ export default {
             opacity: '0.8',
           },
           '91%': {
-            opacity: '0.5',
+            opacity: '0.4',
           },
           '92%': {
             opacity: '0.7',
           },
           '93%': {
-            opacity: '0.2',
+            opacity: '0.1',
           },
           '100%': {
             opacity: '1',
