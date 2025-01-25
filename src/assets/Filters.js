@@ -21,5 +21,5 @@ export const filtersArr = [
     "Pharmacy",
     "Health", 
     "Fitness", 
-    "Office Supplies"
+    "Supplies"
 ];
