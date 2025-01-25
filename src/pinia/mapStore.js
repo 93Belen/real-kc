@@ -3,7 +3,8 @@ import { defineStore } from 'pinia';
 
 export const useMapStore = defineStore('map', {
   state: () => ({
-    suggestions: [], 
+    suggestions: [],
+    pinSelected: null
   }),
   actions: {
     async fetchSuggestions(query) {
@@ -32,5 +33,8 @@ export const useMapStore = defineStore('map', {
     clearSuggestions() {
       this.suggestions = [];
     },
+    selectPin(id){
+      this.pinSelected = id
+    }
   },
 });

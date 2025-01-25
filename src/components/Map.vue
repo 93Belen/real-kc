@@ -1,9 +1,11 @@
 <script setup>
 import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
+import { useMapStore } from "../pinia/mapStore";
 import { onMounted, watch } from "vue";
 import { useDbStore } from '../pinia/dbStore'
 const dbStore = useDbStore()
+const mapStore = useMapStore()
 let map;
 let markers = []
 
@@ -68,6 +70,17 @@ watch(()=> dbStore.display, () => {
   });
 })
 
+watch(() => mapStore.pinSelected, (id) => {
+  // Find the marker and bring it to the front
+    const marker = markers.forEach(m => {
+    if(m.options.icon.options.className.includes(`pin-id-${id}`)){
+      m.setZIndexOffset(1000)
+    }
+    else {
+      m.setZIndexOffset(10)
+    }
+  })
+})
 </script>
 
 <template>

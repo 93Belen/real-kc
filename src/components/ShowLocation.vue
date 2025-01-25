@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import { useMapStore } from '../pinia/mapStore'
+const mapStore = useMapStore()
 const props = defineProps(['id'])
 let id = props.id
 
@@ -11,6 +13,7 @@ const getPin = () => {
 
     const pin = document.getElementsByClassName(`pin-id-${id}`);
     pin[0].classList.add('filter', 'hue-rotate-[-100deg]', 'saturate-[2]', 'brightness-[1.3]');
+    mapStore.selectPin(id)
 };
 
 
