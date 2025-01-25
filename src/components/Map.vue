@@ -41,7 +41,6 @@ onMounted(() => {
 
   // Add markers for each business
   dbStore.display.forEach((business) => {
-    clearMarkers()
     // Define the custom pin icon
     const customPinIcon = L.icon({
         iconUrl: './pin.svg',
