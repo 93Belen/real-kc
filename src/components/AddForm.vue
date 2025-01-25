@@ -65,6 +65,7 @@ const validateAndSave = () => {
                 missingAddress.value = false
                 if(content.value.type.length > 0){
                     missingBusinessType.value = false
+                    dbStore.checkForDuplicated(content.value)
                     dbStore.updateAddForm(content.value)
                     content.value = {
                         name: '',
