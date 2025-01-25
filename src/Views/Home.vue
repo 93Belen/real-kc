@@ -68,7 +68,6 @@ onMounted(() => {
                 <p class="text-md leading-8">
                 <span class="font-bold italic">Search Real KC Beta</span> is the first step toward a project I've had in mind for a long time.<br/> 
                 In the Search page, users can add, remove, and search for small, locally-owned businesses in the Kansas City area.<br/>
-                This site aims to be simple and accessible to everyone.<br/>
                 The beta version is intentionally simple, serving as a foundation for a more advanced and feature-rich platform in the future.
                 </p>
             </div>
@@ -79,9 +78,8 @@ onMounted(() => {
                 <h2 class="text-3xl font-bold text-primary-green font-secondary">Why</h2>
                <p class="text-md leading-8">
                 When I moved to America, one of the biggest cultural shocks was the difficulty of finding family-owned and locally-owned businesses.<br/>
-                Most commerces are corporations, chains, and franchises.<br/>
-                Establishments that populate streets in many parts of the world, like small fruit and vegetable stores, or unique restaurants, are rare here.<br/>
-                I created this project because I want to put my money where my morals are and help others do the same.
+                Commerces that populate streets in many parts of the world, like small fruit and vegetable stores, are rare here.<br/>
+                I created this project because I want to put my money where my morals are, and help others do the same.
                 </p>
             </div>
         </div>
