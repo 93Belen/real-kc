@@ -51,8 +51,8 @@ export const useDbStore = defineStore('db', {
       }    
     },
     async checkForDuplicated(info){
-      const { data, error} = await supabase.from('local-business').select().eq('address', info.address);
-      if(data.length > 0){
+      const { data, error } = await supabase.from('local-business').select().eq('address', info.address);
+      if(data.length > 1){
         toast.error(`There is more than one business in this location`)
       }
     },
