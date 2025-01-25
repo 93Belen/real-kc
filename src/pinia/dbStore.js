@@ -54,7 +54,7 @@ export const useDbStore = defineStore('db', {
       const { data, error} = await supabase.from('local-business').select().eq('address', info.address);
       if(data.length > 0){
         console.log(data)
-        toast.error(`${data[data[0]].name} is also attached to this adddress`)
+        toast.error(`${data[0].name} is also attached to this adddress`)
       }
     },
     async updateAddForm(content) {
