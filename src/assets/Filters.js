@@ -4,6 +4,7 @@ export const filtersArr = [
     "Food",
     "Drinks",
     "Bakery",
+    "Ice Cream",
     "Books", 
     "Hobbies", 
     "Home", 
