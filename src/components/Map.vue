@@ -5,6 +5,13 @@ import { onMounted, watch } from "vue";
 import { useDbStore } from '../pinia/dbStore'
 const dbStore = useDbStore()
 let map;
+let markers = []
+
+// Function to remove all markers
+function clearMarkers() {
+  markers.forEach(marker => map.removeLayer(marker));
+  markers = [];
+}
 
 onMounted(() => {
     // Define bounds for Kansas City
@@ -33,28 +40,32 @@ onMounted(() => {
 
 
   // Add markers for each business
-  dbStore.businesses.forEach((business) => {
+  dbStore.display.forEach((business) => {
+    clearMarkers()
     // Define the custom pin icon
     const customPinIcon = L.icon({
         iconUrl: './pin.svg',
         iconSize: [15, 15],
         className: `pin pin-id-${business.id} grayscale-0 invert-0 contrast-100 saturate-100`
     });
-    L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
+    let marker = L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
+    markers.push(marker);
   });
 
 })
 
-watch(()=> dbStore.businesses, () => {
+watch(()=> dbStore.display, () => {
+  clearMarkers()
  // Add markers for each business
-  dbStore.businesses.forEach((business) => {
+  dbStore.display.forEach((business) => {
     // Define the custom pin icon
     const customPinIcon = L.icon({
         iconUrl: './pin.svg',
         iconSize: [15, 15],
         className: `pin pin-id-${business.id} grayscale-0 invert-0 contrast-100 saturate-100`
     });
-    L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
+    let marker = L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
+    markers.push(marker);
   });
 })
 
