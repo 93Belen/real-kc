@@ -1,14 +1,25 @@
-export const filtersArr = 
-[
+export const filtersArr = [
     "Groceries", 
     "Coffee", 
-    "Restaurant", 
-    "Hobies", 
+    "Food",
+    "Bakery",
+    "Books", 
+    "Hobbies", 
     "Home", 
     "Pet", 
     "Hardware", 
     "Beauty", 
     "Alcohol", 
     "Clothing", 
-    "Gifts"
-]
+    "Electronics", 
+    "Toys",  
+    "Entertainment", 
+    "Florists", 
+    "Travel", 
+    "Gifts", 
+    "Automotive", 
+    "Pharmacy",
+    "Health", 
+    "Fitness", 
+    "Office Supplies"
+];
