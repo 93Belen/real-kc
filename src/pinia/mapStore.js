@@ -14,7 +14,7 @@ export const useMapStore = defineStore('map', {
             const data = await response.json();
             data.forEach(suggestion => {
               const displayArr = suggestion.display_name.split(', ')
-                this.suggestions.push({
+                this.suggestions.unshift({
                     text: `${displayArr[0]} ${displayArr[1]} ${displayArr[2]}`,
                     lat: suggestion.lat,
                     lon: suggestion.lon

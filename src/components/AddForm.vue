@@ -34,7 +34,7 @@ const missingAddress = ref(false)
 const missingBusinessType = ref(false)
 
 const debouncedFetchSuggestions = debounce((address) => {
-        mapStore.clearSuggestions()
+        // mapStore.clearSuggestions()
         mapStore.fetchSuggestions(address)
 }, 1000)
 
@@ -72,6 +72,7 @@ const validateAndSave = () => {
                         address: '',
                         type: []
                     }
+                    mapStore.clearSuggestions()
                     modalsStore.toggleAddForm()
                 }
                 else {
