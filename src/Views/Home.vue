@@ -77,7 +77,7 @@ onMounted(() => {
             <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-4 flex flex-col">
                 <h2 class="text-3xl font-bold text-primary-green font-secondary">Why</h2>
                <p class="text-md leading-8">
-                When I moved to America, one of the biggest cultural shocks was the difficulty of finding family-owned and locally-owned businesses.<br/>
+                After moving to America, I found it very difficult to rely on small businesses for my everyday needs.<br/>
                 Commerces that populate streets in many parts of the world, like small fruit and vegetable stores, are rare here.<br/>
                 I created this project because I want to put my money where my morals are, and help others do the same.
                 </p>
@@ -88,11 +88,9 @@ onMounted(() => {
             <div class="bg-layer2/60 w-full max-w-[400px] rounded-xl backdrop-blur-sm p-6 gap-4 flex flex-col">
                 <h2 class="text-3xl font-bold text-primary-green font-secondary">How</h2>
                 <p class="text-md leading-8">
-                Browse businesses, filter them by type, and locate them on the map by clicking the pin icon on their card.<br/>
+                Browse businesses, filter them by type, and locate them on the map.<br/>
                 When adding or deleting a business, please remember that this is crowd-sourced information. 
-                Add only small, locally-owned businesses, and don't remove a business unless it no longer exists or doesn’t meet the criteria.<br/>
-                <span class="italic text-sm">Since this project avoids relying on big businesses (like Google), the address field in the Add Form may require some patience.</span>
-
+                Add only small, locally-owned businesses, and don't remove a business unless it no longer exists, doesn’t meet the criteria, or you are going to add it with updated information.
                 </p>
             </div>
         </div>
