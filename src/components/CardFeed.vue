@@ -1,7 +1,28 @@
 <script setup>
 import Card from './Card.vue'
 import { useDbStore } from '../pinia/dbStore'
+import { useMapStore } from '../pinia/mapStore'
+import { watch } from 'vue'
+
+const mapStore = useMapStore()
 const dbStore = useDbStore()
+
+
+
+watch(() => mapStore.cardSelected, (id) => {
+  const card = document.getElementById(id)
+  if(card){
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' })
+
+  const prevPin = document.getElementsByClassName(`hue-rotate-[-100deg]`);
+    if (prevPin.length > 0) {
+        prevPin[0].classList.remove('filter', 'hue-rotate-[-100deg]', 'saturate-[2]', 'brightness-[1.3]');
+    }
+
+  const pin = document.getElementsByClassName(`pin-id-${id}`);
+  pin[0].classList.add('filter', 'hue-rotate-[-100deg]', 'saturate-[2]', 'brightness-[1.3]');
+  }
+})
 
 </script>
 

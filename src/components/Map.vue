@@ -50,6 +50,12 @@ onMounted(() => {
         className: `pin pin-id-${business.id} grayscale-0 invert-0 contrast-100 saturate-100`
     });
     let marker = L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
+    marker.on("click", () => {
+      const classes = marker.options.icon.options.className.split(' ')
+      const idClass = classes[1].split('-')
+      const id= idClass[2]
+      mapStore.selectCard(id)
+    })
     markers.push(marker);
   });
 
@@ -66,6 +72,12 @@ watch(()=> dbStore.display, () => {
         className: `pin pin-id-${business.id} grayscale-0 invert-0 contrast-100 saturate-100`
     });
     let marker = L.marker([business.lat, business.lon], { icon: customPinIcon }).addTo(map);
+    marker.on("click", () => {
+      const classes = marker.options.icon.options.className.split(' ')
+      const idClass = classes[1].split('-')
+      const id= idClass[2]
+      mapStore.selectCard(id)
+    })
     markers.push(marker);
   });
 })

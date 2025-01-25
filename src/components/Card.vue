@@ -1,17 +1,32 @@
 <script setup>
-import { useDbStore } from '../pinia/dbStore'
 import Edit from './Edit.vue'
 import Trash from './Trash.vue'
 import ShowLocation from './ShowLocation.vue'
+import { useMapStore } from '../pinia/mapStore'
+import { watch, ref } from 'vue'
+
+const selected = ref(false)
+const mapStore = useMapStore()
 
 const props = defineProps(['data'])
 let { name, description, address, type, id, lat, lon } = props.data
+
+watch(() => mapStore.cardSelected, (selectedId) => {
+    if(Number(selectedId) === id){
+        selected.value = true
+    }
+    else {
+        selected.value = false
+    }
+})
+
+
 
 
 </script>
 
 <template>
-    <div :id="id" class="w-[300px] h-[170px] font-extralight flex flex-col justify-around p-4 bg-layer2 rounded-xl font-body text-white text-[14px]">
+    <div :id="id" :class="selected ? 'bg-layer4' : 'bg-layer2'" class="w-[300px] h-[170px] font-extralight flex flex-col justify-around p-4 rounded-xl font-body text-white text-[14px]">
         <h2 class="font-medium">{{name}}</h2>
        <a target="_blank" class="underline decoration-secondary-yellow underline-offset-1" :href="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address)">{{ address }}</a>
         <p class="">{{description}}</p>
