@@ -9,6 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { onMounted, ref } from 'vue';
 import { router } from '../router'
 import {RouterLink} from 'vue-router'
+import scrollLock from 'scroll-lock';
+
 
 const goToSearch = () => {
     router.push('/search')
@@ -20,6 +22,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 onMounted(() => {
+    scrollLock.enablePageScroll()
     const jumpElements = document.querySelectorAll('.jump');
 
     // Loop through each element so it works in mobile too - when elements reach the view at different times
