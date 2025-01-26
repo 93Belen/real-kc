@@ -11,7 +11,6 @@ import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 import { onMounted } from 'vue'
 import { useModalsStore } from '../pinia/modalsStore'
-import scrollLock from 'scroll-lock';
 
 const modalsStore = useModalsStore()
 
@@ -20,7 +19,6 @@ gsap.registerPlugin(Draggable);
 onMounted(() => {
     const mobile = window.innerWidth < 768
     if(mobile){
-        scrollLock.disablePageScroll();
         Draggable.create(".draggable", {
             type: "y",
             handle: '.handle',
@@ -39,7 +37,7 @@ onMounted(() => {
 </script>
 
 <template>
-<div class="h-[100dvh] p-6 overflow-hidden box-border">
+<div id="page" class="h-[100dvh] p-6 overflow-hidden box-border">
     <!-- Overlaying elements -->
     <div class="absolute top-0 left-0 z-[1] h-fit p-2 md:p-6 flex flex-col gap-2 md:gap-6">
         <GoBack/>
