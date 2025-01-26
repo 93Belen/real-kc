@@ -11,6 +11,8 @@ import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 import { onMounted } from 'vue'
 import { useModalsStore } from '../pinia/modalsStore'
+import scrollLock from 'scroll-lock';
+
 const modalsStore = useModalsStore()
 
 gsap.registerPlugin(Draggable);
@@ -18,6 +20,7 @@ gsap.registerPlugin(Draggable);
 onMounted(() => {
     const mobile = window.innerWidth < 768
     if(mobile){
+        scrollLock.disablePageScroll();
         Draggable.create(".draggable", {
             type: "y",
             handle: '.handle',
